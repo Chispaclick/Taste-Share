@@ -3,7 +3,7 @@
 import NavBar from "@/components/navbar/NavBar";
 import SlideMain from "@/components/slide-main/SlideMain";
 import { useState } from "react";
-import Login from "../login/Login";
+import Footer from "@/components/footer/Footer";
 
 export default function ClientComponent({ children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +22,7 @@ export default function ClientComponent({ children }) {
 
       {/* Contenido principal */}
       <main>{children}</main>
+      <Footer />
     </>
   );
 }

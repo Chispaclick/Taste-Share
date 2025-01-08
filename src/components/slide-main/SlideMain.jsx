@@ -1,5 +1,5 @@
 import Link from "next/link";
-import QlementineIconsUser16 from "@/components/icons/QlementineIconsUser16";
+
 
 function SlideMain({ isOpen }) {
   return (
