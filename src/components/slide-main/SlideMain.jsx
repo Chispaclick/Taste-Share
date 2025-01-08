@@ -9,17 +9,19 @@ function SlideMain() {
         <QlementineIconsUser16 className='w-24'/>
         <h1 className="text-gray-300 text-xl">Name User</h1>
       </di>
-      <div className="flex flex-col p-6">
-        <Link className="text-gray-300 text-lg p-1" href="/">Home</Link>
-        <Link className="text-gray-300 text-lg p-1" href="/profile">
+      <div className="flex flex-col p-6 pb-96">
+        <Link className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl" href="/">Home</Link>
+        <Link className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl" href="/profile">
         Profile</Link>
-        <Link className="text-gray-300 text-lg p-1" href="/ranking">Ranking</Link>
-        <Link className="text-gray-300 text-lg p-1" href="/friends">Friends</Link>
-        <Link className="text-gray-300 text-lg p-1" href="/trend">Trend</Link>
-        <Link className="text-gray-300 text-lg p-1" href="/subscription">Subscription</Link>
-        <Link className="text-gray-300 text-lg p-1" href="/settings">Settings</Link>
+        <Link className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl" href="/ranking">Ranking</Link>
+        <Link className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl" href="/friends">Friends</Link>
+        <Link className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl" href="/trend">Trend</Link>
+        <Link className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl" href="/subscription">Subscription</Link>
+        <Link className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl" href="/settings">Settings</Link>
       </div>
-      
+      <div className='bg-background'>
+        <h2 className='text-gray-300 text-lg p-2'>Suscribite</h2>
+      </div>
     </div>
   );
 }
