@@ -1,21 +1,26 @@
-// ClientComponent.js (cliente)
 'use client';
 
 import NavBar from "@/components/navbar/NavBar";
-import SlideMain from "@/components/navbar/NavBar";
+import SlideMain from "@/components/slide-main/SlideMain";
 import { useState } from "react";
 
 export default function ClientComponent({ children }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  function toggleMenu() {
+  const toggleMenu = () => {
     setIsOpen(!isOpen);
-  }
+  };
 
   return (
     <>
-      <NavBar slideMain={toggleMenu} isOpen={isOpen} />
+      {/* Barra de navegación */}
+      <NavBar toggleMenu={toggleMenu} />
+      
+      {/* Menú desplegable */}
       <SlideMain isOpen={isOpen} />
+
+      {/* Contenido principal */}
+      <main>{children}</main>
     </>
   );
 }
