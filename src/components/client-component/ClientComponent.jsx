@@ -3,6 +3,7 @@
 import NavBar from "@/components/navbar/NavBar";
 import SlideMain from "@/components/slide-main/SlideMain";
 import { useState } from "react";
+import Login from "../login/Login";
 
 export default function ClientComponent({ children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,9 +16,9 @@ export default function ClientComponent({ children }) {
     <>
       {/* Barra de navegación */}
       <NavBar toggleMenu={toggleMenu} />
-      
-      {/* Menú desplegable */}
+      {/* Menú desplegable<Login /> */}
       <SlideMain isOpen={isOpen} />
+      
 
       {/* Contenido principal */}
       <main>{children}</main>

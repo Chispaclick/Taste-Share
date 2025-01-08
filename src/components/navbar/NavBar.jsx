@@ -8,10 +8,11 @@ import Link from 'next/link';
 
 function NavBar({toggleMenu}) {
   return (
-    <div className='relative flex items-center place-content-between bg-background p-2 border-b-[0.2px] border-b-gray-300'>
+    <div className='relative flex items-center place-content-between bg-background p-4 border-b-[0.2px] border-b-gray-300'>
       <HeroiconsBars4Solid onClick={toggleMenu}/>
       <Link href="/taste-share"><h1 className='text-gray-300 text-lg'>Taste<br />Share</h1></Link>
-      <QlementineIconsUser16 />
+      <Link href="/log"><button className='bg-gray-300 text-gray-950 font-semibold mb-2 rounded-lg py-1 px-3 '>Login</button></Link>
+      
     </div>
   )
 }
