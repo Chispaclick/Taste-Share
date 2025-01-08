@@ -4,17 +4,17 @@ import QlementineIconsUser16 from "@/components/icons/QlementineIconsUser16";
 function SlideMain({ isOpen }) {
   return (
     <div
-      className={`absolute z-{0} left-0 top-18 flex flex-col bg-background text-white p-4 rounded shadow-lg transition-transform duration-500 ease-in-out w-[430px] overflow-hidden${
+      className={`absolute z-{0} left-0 top-18 flex flex-col bg-background text-white p-2 rounded shadow-lg transition-transform duration-500 ease-in-out w-[375px] overflow-hidden${
         isOpen
           ? "opacity-100 visible translate-x-0"
           : "opacity-0 invisible -translate-x-full"
       }`}
     >
-      <di className="flex flex-col place-content-start items-start border-gray-300 border-[0.2px] rounded-lg bg-background p-10">
+      <di className="flex flex-col place-content-start items-start rounded-lg bg-background p-8">
         <img src="/user_albert.jpg" className="w-16 rounded-full" />
         <h1 className="text-gray-300 font-semibold pt-4">ALBERTO</h1>
       </di>
-      <div className="flex flex-col p-6 pb-96">
+      <div className="flex flex-col p-4 pb-96">
         <Link
           className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl font-semibold mb-2"
           href="/"
