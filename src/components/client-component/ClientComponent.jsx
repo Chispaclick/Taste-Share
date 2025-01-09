@@ -5,10 +5,12 @@ import SlideMain from "@/components/slide-main/SlideMain";
 import { useState } from "react";
 import Footer from "@/components/footer/Footer";
 import Login from "../login/Login";
+import { Provider } from "react-redux";
+import { store } from '@/store/store';
 
 export default function ClientComponent({ children }) {
-  const [ isOpen, setIsOpen ] = useState(false);
-  const [ loginHidden, setLoginHidden ] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [loginHidden, setLoginHidden] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -20,18 +22,17 @@ export default function ClientComponent({ children }) {
 
   return (
     <>
-      {/* Barra de navegación */}
-      <NavBar 
-      toggleMenu={toggleMenu}
-      showLogin={showLogin}
-       />
-      <Login loginHidden = {loginHidden}/>
-      {/* Menú desplegable<Login /> */}
-      <SlideMain isOpen={isOpen} />
+      <Provider store={store}>
+        {/* Barra de navegación */}
+        <NavBar toggleMenu={toggleMenu} showLogin={showLogin} />
+        <Login loginHidden={loginHidden} />
+        {/* Menú desplegable<Login /> */}
+        <SlideMain isOpen={isOpen} />
 
-      {/* Contenido principal */}
-      <main>{children}</main>
-      <Footer />
+        {/* Contenido principal */}
+        <main>{children}</main>
+        <Footer />
+      </Provider>
     </>
   );
 }

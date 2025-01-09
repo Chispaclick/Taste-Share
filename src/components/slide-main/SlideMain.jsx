@@ -1,27 +1,39 @@
 import Link from "next/link";
-
+import { useEffect } from 'react';
 
 function SlideMain({ isOpen, setIsOpen }) {
   const handleClose = () => {
     setIsOpen(false); // Cierra el menú al hacer clic en un enlace
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('no-scroll'); // Deshabilitar scroll
+    } else {
+      document.body.classList.remove('no-scroll'); // Rehabilitar scroll
+    }
+    return () => {
+      document.body.classList.remove('no-scroll'); // Limpiar la clase cuando el componente se desmonta
+    };
+  }, [isOpen]);
+
   return (
     <div
-      className={`absolute z-{0} left-0 top-18 flex flex-col bg-background text-white p-2 rounded shadow-lg transition-transform duration-500 ease-in-out w-full overflow-hidden${
+      className={`absolute z-10 left-0 top-18 flex flex-col bg-background text-white p-2 rounded shadow-lg transition-transform duration-500 ease-in-out w-full overflow-hidden${
         isOpen
           ? "opacity-100 visible translate-x-0"
           : "opacity-0 invisible -translate-x-full"
       }`}
     >
-      <di className="flex flex-col place-content-start items-start rounded-lg bg-background p-8">
+      <div className="flex flex-col place-content-start items-start rounded-lg bg-background p-8">
         <img src="/user_albert.jpg" className="w-16 rounded-full" />
         <h1 className="text-gray-300 font-semibold pt-4">ALBERTO</h1>
-      </di>
+      </div>
       <div className="flex flex-col p-4 pb-96">
         <Link
           onClick={handleClose}
           className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl font-semibold mb-2"
-          href="/"
+          href="/home"
         >
           Home
         </Link>

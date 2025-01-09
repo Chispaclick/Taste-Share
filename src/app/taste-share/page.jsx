@@ -3,46 +3,60 @@ import React from "react";
 function TasteShare() {
   return (
     <div className="recommendation-section bg-background text-gray-300 p-8">
-      <h1 className="text-3xl font-bold mb-4">
-        Descubre y comparte con Taste Share
+      <h1 className="text-3xl font-bold my-4">
+        Descubre, Conecta y Comparte Momentos Únicos
       </h1>
       <p className="mb-4">
-        <strong>Taste Share</strong> es una aplicación diseñada para que
-        compartas y descubras contenido multimedia de forma sencilla y
-        emocionante. Desde fotos y videos hasta películas, series y mucho más,
-        esta plataforma te permite conectar con tus amigos y explorar
-        recomendaciones basadas en tus gustos y los de tu círculo social.
+        <strong>Taste Share</strong> es una plataforma diseñada para compartir y
+        descubrir experiencias auténticas a través de contenido multimedia.
+        Desde fotografías y vídeos hasta momentos personales y emocionantes,
+        esta aplicación te permite conectar con tus amigos y familiares, así
+        como explorar nuevas recomendaciones basadas en tus propios intereses y
+        los de tu círculo cercano.
       </p>
+
       <h2 className="text-2xl font-semibold mb-2">
-        Recomendar nunca fue tan fácil
+        Comparte tus Momentos Especiales
       </h2>
       <p className="mb-4">
-        ¿Acabas de ver una película impresionante o una serie que te atrapó
-        desde el primer capítulo? En <strong>Taste Share</strong>, puedes
-        compartir ese contenido directamente en tu muro personal. Tus amigos
-        podrán descubrir nuevas opciones de entretenimiento gracias a tus
-        recomendaciones. Cada publicación se convierte en una ventana a nuevas
-        historias, géneros y experiencias audiovisuales.
+        ¿Has tenido un día especial o una experiencia inolvidable? En{" "}
+        <strong>Taste Share</strong>, puedes compartir esos momentos únicos
+        directamente con tus amigos. Tus publicaciones se convierten en
+        historias compartidas que pueden ser vistas y comentadas, permitiendo a
+        tus amigos explorar nuevas emociones y recuerdos.
       </p>
+
       <h2 className="text-2xl font-semibold mb-2">
-        Haz de tu perfil tu carta de presentación
+        Explora y Descubre Contenido Diverso
       </h2>
       <p className="mb-4">
-        Personaliza tu perfil para reflejar tus gustos y crea un espacio único
-        donde los demás puedan conocerte a través de tus recomendaciones.
-        Comparte tus fotos, videos y listas de contenido favorito. Además,
-        encuentra personas que compartan tus mismos intereses y descubre
-        comunidades apasionadas por los mismos géneros e historias.
+        Taste Share no solo es un espacio para compartir, sino también para
+        descubrir. Navega por contenido sugerido basado en tus preferencias y
+        aquellos momentos que te apasionan. Ya sea música, películas, recetas o
+        aventuras, encuentra nuevas ideas y conecta con personas que compartan
+        tus intereses.
       </p>
+
       <h2 className="text-2xl font-semibold mb-2">
-        Explora, conecta y disfruta
+        Personaliza tu Espacio Único
+      </h2>
+      <p className="mb-4">
+        Tu perfil en <strong>Taste Share</strong> es una extensión de ti mismo.
+        Personaliza tu espacio con imágenes, vídeos y listas de tus favoritos
+        para mostrar quién eres. Descubre a otras personas que compartan tus
+        mismos intereses y construye una comunidad que valore tus
+        recomendaciones.
+      </p>
+
+      <h2 className="text-2xl font-semibold mb-2">
+        Conecta con Tu Círculo Social
       </h2>
       <p>
-        Con <strong>Taste Share</strong>, descubrir contenido nunca había sido
-        tan divertido. Comparte tus momentos, encuentra nuevos amigos y
-        conviértete en el punto de referencia para recomendaciones en tu círculo
-        social. ¡Únete y comienza a disfrutar de una experiencia social
-        diferente!
+        Con <strong>Taste Share</strong>, compartir y conectar es fácil.
+        Comparte tus experiencias y encuentra amigos que valoren tus
+        recomendaciones. Esta plataforma permite no solo compartir contenido,
+        sino también formar relaciones significativas a través de momentos
+        especiales.
       </p>
     </div>
   );
