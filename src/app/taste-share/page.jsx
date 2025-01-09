@@ -4,8 +4,11 @@ function TasteShare() {
   return (
     <div className="recommendation-section bg-background text-gray-300 p-8">
       <h1 className="text-3xl font-bold my-4">
-        Descubre, Conecta y Comparte Momentos Únicos
+        About Taste Share
       </h1>
+      <h2 className="text-2xl font-bold my-4">
+        Descubre, Conecta y Comparte Momentos Únicos
+      </h2>
       <p className="mb-4">
         <strong>Taste Share</strong> es una plataforma diseñada para compartir y
         descubrir experiencias auténticas a través de contenido multimedia.

@@ -7,6 +7,7 @@ import Footer from "@/components/footer/Footer";
 import Login from "../login/Login";
 import { Provider } from "react-redux";
 import { store } from '@/store/store';
+import Home from "@/app/page";
 
 export default function ClientComponent({ children }) {
   const [isOpen, setIsOpen] = useState(false);
