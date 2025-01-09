@@ -4,7 +4,7 @@ import Link from "next/link";
 function SlideMain({ isOpen }) {
   return (
     <div
-      className={`absolute z-{0} left-0 top-18 flex flex-col bg-background text-white p-2 rounded shadow-lg transition-transform duration-500 ease-in-out w-[375px] overflow-hidden${
+      className={`absolute z-{0} left-0 top-18 flex flex-col bg-background text-white p-2 rounded shadow-lg transition-transform duration-500 ease-in-out w-full overflow-hidden${
         isOpen
           ? "opacity-100 visible translate-x-0"
           : "opacity-0 invisible -translate-x-full"
