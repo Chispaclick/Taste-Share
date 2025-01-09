@@ -8,7 +8,7 @@ function NavBar({ toggleMenu, showLogin }) {
     <div className="flex items-center place-content-between bg-background p-4 border-b-[0.2px] border-b-gray-300">
       <HeroiconsBars4Solid onClick={toggleMenu} />
       <Link href="/taste-share">
-        <img src="/logo.jpg" className="w-6" />
+        <img src="/logo_taste_share.png" className="w-20 ml-6" />
       </Link>
       <Link href="/log">
         <button className="bg-gray-300 text-gray-950 font-semibold mb-2 rounded-lg py-1 px-3 "
