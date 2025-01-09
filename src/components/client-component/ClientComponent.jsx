@@ -1,24 +1,33 @@
-'use client';
+"use client";
 
 import NavBar from "@/components/navbar/NavBar";
 import SlideMain from "@/components/slide-main/SlideMain";
 import { useState } from "react";
 import Footer from "@/components/footer/Footer";
+import Login from "../login/Login";
 
 export default function ClientComponent({ children }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [ isOpen, setIsOpen ] = useState(false);
+  const [ loginHidden, setLoginHidden ] = useState(false)
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const showLogin = () => {
+    setLoginHidden(!loginHidden);
+  };
+
   return (
     <>
       {/* Barra de navegación */}
-      <NavBar toggleMenu={toggleMenu} />
+      <NavBar 
+      toggleMenu={toggleMenu}
+      showLogin={showLogin}
+       />
+      <Login loginHidden = {loginHidden}/>
       {/* Menú desplegable<Login /> */}
       <SlideMain isOpen={isOpen} />
-      
 
       {/* Contenido principal */}
       <main>{children}</main>
