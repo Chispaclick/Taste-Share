@@ -1,8 +1,15 @@
 'use client'
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { signInWithGoogle, signInWithEmail } from "@/firebase/config";
+import { useSelector } from "react-redux";
 
 const Login = ({ loginHidden }) => {
+
+  const { status } = useSelector( state => state.auth );
+
+  const isAuthenticating = useMemo(() => status === 'checking', [status])
+
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -40,6 +47,17 @@ const Login = ({ loginHidden }) => {
           </h1>
         </div>
         {/* Inicio de sesión con correo */}
+        <label className="w-full p-2" htmlFor="name">
+          Name
+          <input
+            id="name"
+            className="w-full p-2 rounded-md"
+            type="email"
+            placeholder="Name"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </label>
         <label className="w-full p-2" htmlFor="email">
           Email
           <input
@@ -63,15 +81,17 @@ const Login = ({ loginHidden }) => {
           />
         </label>
         <button
+          disabled={ isAuthenticating }
           type="button"
           onClick={handleEmailSignIn}
-          className="bg-blue-500 w-full p-2 mb-2 text-gray-300 rounded-md flex place-content-center items-center"
+          className="bg-background w-full p-2 mb-2 text-gray-300 rounded-md flex place-content-center items-center"
         >
           Login with Email
         </button>
 
         {/* Inicio de sesión con Google */}
         <button
+          disabled={ isAuthenticating }
           type="button"
           onClick={handleGoogleSignIn}
           className="bg-amber-600 w-full p-2 mb-2 text-gray-950 rounded-md flex place-content-center items-center"
