@@ -9,7 +9,7 @@ function TasteShare() {
       <h1 className="text-3xl text-amber-600 font-bold my-4 animate__animated  animate__fadeInUp">
         About Taste Share
       </h1>
-      <p className="mb-4 animate__animated  animate__fadeInUp">
+      <p className=" animate__animated  animate__fadeInUp text-md mb-8">
         <strong>Taste Share</strong> es una plataforma diseñada para compartir y
         descubrir experiencias auténticas a través de contenido multimedia.
         Desde fotografías y vídeos hasta momentos personales y emocionantes,
@@ -21,7 +21,7 @@ function TasteShare() {
       <h2 className="text-2xl font-semibold mb-2 animate__animated  animate__fadeInUp">
         Comparte tus Momentos Especiales
       </h2>
-      <p className="mb-4 animate__animated  animate__fadeInUp">
+      <p className="animate__animated  animate__fadeInUp text-md mb-8">
         ¿Has tenido un día especial o una experiencia inolvidable? En{" "}
         <strong>Taste Share</strong>, puedes compartir esos momentos únicos
         directamente con tus amigos. Tus publicaciones se convierten en
@@ -32,7 +32,7 @@ function TasteShare() {
       <h2 className="text-2xl font-semibold mb-2 animate__animated  animate__fadeInUp">
         Explora y Descubre Contenido Diverso
       </h2>
-      <p className="mb-4 animate__animated  animate__fadeInUp">
+      <p className="animate__animated  animate__fadeInUp text-md mb-8">
         Taste Share no solo es un espacio para compartir, sino también para
         descubrir. Navega por contenido sugerido basado en tus preferencias y
         aquellos momentos que te apasionan. Ya sea música, películas, recetas o
@@ -43,7 +43,7 @@ function TasteShare() {
       <h2 className="text-2xl font-semibold mb-2 animate__animated  animate__fadeInUp">
         Personaliza tu Espacio Único
       </h2>
-      <p className="mb-4 animate__animated  animate__fadeInUp">
+      <p className="animate__animated  animate__fadeInUp text-md mb-8">
         Tu perfil en <strong>Taste Share</strong> es una extensión de ti mismo.
         Personaliza tu espacio con imágenes, vídeos y listas de tus favoritos
         para mostrar quién eres. Descubre a otras personas que compartan tus
@@ -54,7 +54,7 @@ function TasteShare() {
       <h2 className="text-2xl font-semibold mb-2 animate__animated  animate__fadeInUp">
         Conecta con Tu Círculo Social
       </h2>
-      <p className="mb-4 animate__animated  animate__fadeInUp">
+      <p className="animate__animated  animate__fadeInUp mb-4">
         Con <strong>Taste Share</strong>, compartir y conectar es fácil.
         Comparte tus experiencias y encuentra amigos que valoren tus
         recomendaciones. Esta plataforma permite no solo compartir contenido,
