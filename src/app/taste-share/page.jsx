@@ -1,7 +1,10 @@
+import CopyRight from "@/components/copyright/CopyRight";
+import Footer from "@/components/footer/Footer";
 import React from "react";
 
 function TasteShare() {
   return (
+    <>
     <div className="bg-background text-gray-300 p-8">
       <h1 className="text-3xl font-bold my-4">
         About Taste Share
@@ -62,6 +65,9 @@ function TasteShare() {
         especiales.
       </p>
     </div>
+    <Footer />
+    <CopyRight />
+    </>
   );
 }
 

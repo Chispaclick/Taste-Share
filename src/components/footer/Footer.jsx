@@ -1,45 +1,35 @@
 import React from "react";
 import Link from "next/link";
+import AntDesignFacebookFilled from '@/components/icons/AntDesignFacebookFilled';
+import CircumInstagram from '@/components/icons/CircumInstagram';
+import PajamasTwitter from '@/components/icons/PajamasTwitter';
+
 
 function Footer() {
   return (
-    <div className="bg-gray-300 flex place-content-start items-center w-full p-10">
-      <div className="flex flex-col flex-1 place-content-start items-start ">
+    <div className="bg-gray-300 flex flex-col place-content-center items-center w-full p-8">
+      <div className="flex flex-col place-content-start  items-start w-full pl-10">
+        <h4 className="text-gray-950 font-semibold text-lg">Asistencia</h4>
         <ul>
-          <li className="text-gray-950">
-            <Link href="/">Home</Link>
-          </li>
-          <li className="text-gray-950">
-            <Link href="/explore">Explorar</Link>
-          </li>
-          <li className="text-gray-950">
-            <Link href="/profile">Perfil</Link>
-          </li>
-          
-          <li className="text-gray-950">
-            <Link href="/ranking">Ranking</Link>
-          </li>
-          <li className="text-gray-950">
-            <Link href="/friends">Amigos</Link>
-          </li>
-        </ul>
-      </div>
-
-      <div className="flex flex-col flex-1 place-content-start  items-start ">
-        <ul>
-          <li>
+          <li className="text-gray-950 text-sm text-start">
             <Link href="/subscriptions">Suscripciones</Link>
           </li>
-          <li className="text-gray-950">
-            <Link href="/settings">Ajustes</Link>
+          <li className="text-gray-950 text-sm text-start">
+            <Link href="/settings">Preguntas frecuentes</Link>
           </li>
-          <li className="text-gray-950">
-            <Link href="/trends">Tendencias</Link>
+          <li className="text-gray-950 text-sm text-start">
+            <Link href="/trends">Contact support</Link>
           </li>
-          <li className="text-gray-950">
+          <li className="text-gray-950 text-sm text-start">
             <Link href="/help">Ayuda</Link>
           </li>
         </ul>
+      </div>
+      <hr className="border-gray-950 border-1 w-72 mt-6"/>
+      <div className="flex place-content-start items-center pt-6">
+        <AntDesignFacebookFilled  className="pl-2"/>
+        <CircumInstagram  className="pl-2"/>
+        <PajamasTwitter className="pl-2" />
       </div>
     </div>
   );

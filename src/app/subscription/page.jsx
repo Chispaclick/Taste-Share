@@ -1,3 +1,4 @@
+import CopyRight from "@/components/copyright/CopyRight";
 import Footer from "@/components/footer/Footer";
 import MaterialSymbolsLightCheckRounded from "@/components/icons/MaterialSymbolsLightCheckRounded";
 
@@ -96,6 +97,7 @@ function Suscription() {
       </p>
     </div>
       <Footer />
+      <CopyRight />
       </>
   );
 }
