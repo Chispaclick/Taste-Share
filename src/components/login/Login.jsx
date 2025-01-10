@@ -33,7 +33,7 @@ const Login = ({ loginHidden }) => {
 
   return (
     <div
-      className={`absolute top-0 flex flex-col place-content-center items-center bg-background w-full h-[843px] ${
+      className={`absolute top-0 flex flex-col place-content-center items-center bg-background w-full h-screen ${
         loginHidden ? "block" : "hidden"
       }`}
     >

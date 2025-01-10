@@ -6,7 +6,7 @@ import 'animate.css';
 function Suscription() {
   return (
     <>
-    <div className="flex flex-col bg-background place-content-center items-center p-8 w-full mt-20">
+    <div className="flex flex-col bg-background place-content-center items-center p-8 w-full mt-10">
       <div>
         {/* Introducción de la página */}
         <div>
@@ -23,14 +23,14 @@ function Suscription() {
 
         <div>
           {/* Plan económico */}
-          <div className="animate__animated animate__fadeInLeftBig flex flex-col flex-1 place-content-center items-start p-8 bg-gray-200 rounded-md mb-6">
+          <div className="relative animate__animated animate__fadeInUp flex flex-col flex-1 place-content-center items-start p-8 bg-gray-200 rounded-md mb-6">
             <p className="text-gray-950 font-semibold mb-2">Full Plan</p>
             <h2 className="text-gray-950 text-4xl mb-4">$5.00</h2>
             <p className="text-gray-950 font-semibold mb-4">
               Ideal para quienes quieren disfrutar de una experiencia básica
               pero completa.
             </p>
-            <button className="bg-background text-gray-300 p-2 rounded-md w-full">
+            <button className="bg-background text-gray-300 p-2 rounded-md w-full animate__animated hover:animate__pulse">
               Buy this plan
             </button>
             {/* Beneficios del plan económico */}
@@ -56,7 +56,7 @@ function Suscription() {
           </div>
 
           {/* Plan premium */}
-          <div className="animate__animated animate__fadeInRightBig flex flex-col flex-1  place-content-center items-start p-8 bg-amber-600 rounded-md">
+          <div className="relative animate__animated animate__fadeInUp flex flex-col flex-1  place-content-center items-start p-8 bg-amber-600 rounded-md">
             <p className="text-gray-950 font-semibold mb-2">Premium Plan</p>
             <h2 className="text-gray-950 text-4xl mb-4">$10.00</h2>
             <p className="text-gray-950 font-semibold mb-4">
