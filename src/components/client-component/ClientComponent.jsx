@@ -32,7 +32,6 @@ export default function ClientComponent({ children }) {
 
         {/* Contenido principal */}
         <main>{children}</main>
-        <Footer />
       </Provider>
     </>
   );

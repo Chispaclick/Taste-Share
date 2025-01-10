@@ -4,9 +4,11 @@ import FormUp from '@/components/form-up/FormUp';
 import React from "react";
 
 
+
 function Profile() {
   return (
-    <div className="bg-background flex flex-col place-content-center items-center w-full h-[860px]">
+    <>
+    <div className="bg-background flex flex-col place-content-center items-center w-full h-screen">
       <div className="flex-1 place-content-center items-start p-4">
         <UserData />
       </div>
@@ -17,6 +19,8 @@ function Profile() {
       </div>
       <FormUp />
     </div>
+    
+    </>
   );
 }
 

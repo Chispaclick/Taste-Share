@@ -19,9 +19,9 @@ function SlideMain({ isOpen, setIsOpen }) {
 
   return (
     <div
-      className={`absolute z-10 left-0 top-18 flex flex-col bg-background text-white p-2 rounded shadow-lg transition-transform duration-500 ease-in-out w-full overflow-hidden${
+      className={`fixed z-10 left-0 top-20 flex flex-col bg-background text-white p-2 rounded shadow-lg transition-transform duration-500 ease-in-out w-full overflow-hidden h-screen overflow-y-hidden ${
         isOpen
-          ? "opacity-100 visible translate-x-0"
+          ? "opacity-100 visible translate-x-0 "
           : "opacity-0 invisible -translate-x-full"
       }`}
     >

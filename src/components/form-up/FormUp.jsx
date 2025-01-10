@@ -28,10 +28,10 @@ const FormUp = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col items-center p-4 bg-amber-600 rounded-t-md"
+      className=" absolute bottom-0 flex flex-col items-center p-4 bg-amber-600 rounded-t-md"
     >
       <label className="w-full mb-2">
-        Título:
+        Title:
         <input
           type="text"
           className="w-full p-2 border rounded-md bg-gray-300"
@@ -41,7 +41,7 @@ const FormUp = () => {
         />
       </label>
       <label className="w-full mb-2">
-        Descripción:
+        Description:
         <textarea
           className="w-full p-2 border rounded-md bg-gray-300"
           value={description}
@@ -50,7 +50,7 @@ const FormUp = () => {
         />
       </label>
       <label className="w-full mb-4">
-        Imagen:
+        Image:
         <input
           type="file"
           accept="image/*"
@@ -61,7 +61,7 @@ const FormUp = () => {
       </label>
       <button
         type="submit"
-        className="bg-background text-white py-2 px-4 rounded-xl w-full"
+        className="bg-background text-white py-2 px-4 rounded-md w-full"
       >
         Subir
       </button>

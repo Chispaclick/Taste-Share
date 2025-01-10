@@ -5,7 +5,7 @@ import Link from "next/link";
 
 function NavBar({ toggleMenu, showLogin }) {
   return (
-    <div className="flex items-center place-content-between bg-background p-4 border-b-[0.2px] border-b-gray-300">
+    <div className="flex fixed top-0 z-20 w-full items-center place-content-between bg-background p-4 border-b-[0.2px] border-b-gray-300">
       <HeroiconsBars4Solid onClick={toggleMenu} className="ml-2"/>
       <Link href="/taste-share">
         <img src="/logo_taste_share.png" className="w-20 ml-6" />
