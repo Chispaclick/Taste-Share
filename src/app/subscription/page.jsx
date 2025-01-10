@@ -6,11 +6,11 @@ import 'animate.css';
 function Suscription() {
   return (
     <>
-    <div className="flex flex-col bg-background place-content-center items-center p-8 w-full mt-10">
+    <div className="flex flex-col bg-background place-content-center items-center p-8 w-full mt-16">
       <div>
         {/* Introducción de la página */}
         <div>
-          <h1 className="text-gray-300 text-3xl font-semibold mb-4">
+          <h1 className="text-amber-600 text-3xl font-semibold mb-4">
             Subscriptions
           </h1>
           <p className="text-gray-300 text-lg mb-6">
@@ -23,7 +23,7 @@ function Suscription() {
 
         <div>
           {/* Plan económico */}
-          <div className="relative animate__animated animate__fadeInUp flex flex-col flex-1 place-content-center items-start p-8 bg-gray-200 rounded-md mb-6">
+          <div className="animate__animated animate__fadeInUp flex flex-col flex-1 place-content-center items-start p-8 bg-gray-200 rounded-md mb-6">
             <p className="text-gray-950 font-semibold mb-2">Full Plan</p>
             <h2 className="text-gray-950 text-4xl mb-4">$5.00</h2>
             <p className="text-gray-950 font-semibold mb-4">
@@ -56,7 +56,7 @@ function Suscription() {
           </div>
 
           {/* Plan premium */}
-          <div className="relative animate__animated animate__fadeInUp flex flex-col flex-1  place-content-center items-start p-8 bg-amber-600 rounded-md">
+          <div className="animate__animated animate__fadeInUp flex flex-col flex-1  place-content-center items-start p-8 bg-amber-600 rounded-md">
             <p className="text-gray-950 font-semibold mb-2">Premium Plan</p>
             <h2 className="text-gray-950 text-4xl mb-4">$10.00</h2>
             <p className="text-gray-950 font-semibold mb-4">

@@ -5,13 +5,10 @@ import React from "react";
 function TasteShare() {
   return (
     <>
-    <div className="bg-background text-gray-300 p-8 mt-8">
-      <h1 className="text-3xl font-bold my-4 animate__animated  animate__fadeInUp">
+    <div className="bg-background text-gray-300 p-8 mt-10">
+      <h1 className="text-3xl text-amber-600 font-bold my-4 animate__animated  animate__fadeInUp">
         About Taste Share
       </h1>
-      <h2 className="text-2xl font-bold my-4 animate__animated  animate__fadeInUp">
-        Descubre, Conecta y Comparte Momentos Únicos
-      </h2>
       <p className="mb-4 animate__animated  animate__fadeInUp">
         <strong>Taste Share</strong> es una plataforma diseñada para compartir y
         descubrir experiencias auténticas a través de contenido multimedia.
