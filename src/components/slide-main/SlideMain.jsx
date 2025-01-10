@@ -25,63 +25,63 @@ function SlideMain({ isOpen, setIsOpen }) {
           : "opacity-0 invisible -translate-x-full"
       }`}
     >
-      <div className="flex flex-col place-content-start items-start bg-background p-8">
-        <img src="/user_albert.jpg" className="w-16 rounded-full" />
-        <h1 className="text-gray-300 font-semibold pt-4">ALBERTO</h1>
+      <div className="flex flex-col place-content-center items-center bg-background p-8">
+        <img src="/user_logo.png" className="w-16 rounded-full" />
+        <h1 className="text-amber-600 font-semibold pt-4">USER NAME</h1>
       </div>
-      <div className="flex flex-col p-4 pb-86">
+      <div className="flex flex-col pb-86 p-4">
         <Link
           onClick={handleClose}
-          className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl font-semibold mb-2"
+          className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out"
           href="/"
         >
           Home
         </Link>
         <Link
           onClick={handleClose}
-          className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl font-semibold mb-2"
+          className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out"
           href="/profile"
         >
           Profile
         </Link>
         <Link
           onClick={handleClose}
-          className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl font-semibold mb-2"
+          className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md font-semibold mb-2 transition duration-300 ease-in-out"
           href="/ranking"
         >
           Ranking
         </Link>
         <Link
           onClick={handleClose}
-          className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl font-semibold mb-2"
+          className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out"
           href="/friends"
         >
           Friends
         </Link>
         <Link
           onClick={handleClose}
-          className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl font-semibold mb-2"
+          className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out"
           href="/comunity"
         >
           Comunity
         </Link>
         <Link
           onClick={handleClose}
-          className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl font-semibold mb-2"
+          className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out"
           href="/trend"
         >
           Trend
         </Link>
         <Link
           onClick={handleClose}
-          className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl font-semibold mb-2"
+          className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out"
           href="/subscription"
         >
           Subscription
         </Link>
         <Link
           onClick={handleClose}
-          className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl font-semibold mb-2"
+          className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out"
           href="/settings"
         >
           Settings
