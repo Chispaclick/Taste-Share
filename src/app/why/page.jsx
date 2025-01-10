@@ -1,7 +1,10 @@
+import CopyRight from "@/components/copyright/CopyRight";
+import Footer from "@/components/footer/Footer";
 import React from "react";
 
 function page() {
   return (
+    <>
     <div className="recommendation-section bg-background text-gray-300 p-8">
       <section>
         <h2 class="text-2xl font-semibold mb-2">
@@ -64,6 +67,9 @@ function page() {
         </p>
       </section>
     </div>
+    <Footer />
+    <CopyRight />
+    </>
   );
 }
 

@@ -1,6 +1,7 @@
 import CopyRight from "@/components/copyright/CopyRight";
 import Footer from "@/components/footer/Footer";
 import MaterialSymbolsLightCheckRounded from "@/components/icons/MaterialSymbolsLightCheckRounded";
+import 'animate.css';
 
 function Suscription() {
   return (
@@ -22,7 +23,7 @@ function Suscription() {
 
         <div>
           {/* Plan económico */}
-          <div className="flex flex-col flex-1 place-content-center items-start p-8 bg-gray-300 rounded-md mb-6">
+          <div className="animate__animated animate__fadeInLeftBig flex flex-col flex-1 place-content-center items-start p-8 bg-gray-200 rounded-md mb-6">
             <p className="text-gray-950 font-semibold mb-2">Full Plan</p>
             <h2 className="text-gray-950 text-4xl mb-4">$5.00</h2>
             <p className="text-gray-950 font-semibold mb-4">
@@ -55,7 +56,7 @@ function Suscription() {
           </div>
 
           {/* Plan premium */}
-          <div className="flex flex-col flex-1  place-content-center items-start p-8 bg-amber-600 rounded-md">
+          <div className="animate__animated animate__fadeInRightBig flex flex-col flex-1  place-content-center items-start p-8 bg-amber-600 rounded-md">
             <p className="text-gray-950 font-semibold mb-2">Premium Plan</p>
             <h2 className="text-gray-950 text-4xl mb-4">$10.00</h2>
             <p className="text-gray-950 font-semibold mb-4">

@@ -1,3 +1,4 @@
+import CopyRight from "@/components/copyright/CopyRight";
 import Footer from "@/components/footer/Footer";
 
 export default function Home() {
@@ -65,6 +66,7 @@ export default function Home() {
       </section>
     </div>
     <Footer />
+    <CopyRight />
     </>
   );
 }
