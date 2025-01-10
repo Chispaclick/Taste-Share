@@ -2,8 +2,6 @@ import ClientComponent from "@/components/client-component/ClientComponent";
 import "./globals.css"; // Asegúrate de incluir tu archivo CSS global
 import { Kanit } from "next/font/google";
 
-
-
 // Carga la fuente Kanit con los pesos deseados
 const kanit = Kanit({
   subsets: ["latin"],
@@ -23,8 +21,7 @@ function RootLayout({ children }) {
     <html lang="en" className={kanit.className}>
       <body>
         {/* Incluye el ClientComponent que maneja NavBar y SlideMain */}
-        <ClientComponent>
-          {children}</ClientComponent>
+        <ClientComponent>{children}</ClientComponent>
       </body>
     </html>
   );

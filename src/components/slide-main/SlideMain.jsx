@@ -25,7 +25,7 @@ function SlideMain({ isOpen, setIsOpen }) {
           : "opacity-0 invisible -translate-x-full"
       }`}
     >
-      <div className="flex flex-col place-content-start items-start rounded-lg bg-background p-8">
+      <div className="flex flex-col place-content-start items-start bg-background p-8">
         <img src="/user_albert.jpg" className="w-16 rounded-full" />
         <h1 className="text-gray-300 font-semibold pt-4">ALBERTO</h1>
       </div>

@@ -1,4 +1,5 @@
 import UserData from "@/components/user-data/UserData";
+import SubNavBar from "@/components/sub-nav-bar/SubNavBar";
 import React from "react";
 
 function Profile() {
@@ -12,6 +13,7 @@ function Profile() {
         <p className="text-gray-300 text-sm font-semibold mb-1">Posts:</p>
         <p className="text-gray-300 text-sm font-semibold mb-1">Followers:</p>
       </div>
+      <SubNavBar />
     </div>
   );
 }
