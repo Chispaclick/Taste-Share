@@ -3,8 +3,8 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <div className="bg-gray-300 flex place-content-center items-center w-full p-10">
-      <div className="flex flex-col place-content-start items-center w-1/2">
+    <div className="bg-gray-300 flex place-content-start items-center w-full p-10">
+      <div className="flex flex-col flex-1 place-content-start items-start ">
         <ul>
           <li className="text-gray-950">
             <Link href="/">Home</Link>
@@ -25,7 +25,7 @@ function Footer() {
         </ul>
       </div>
 
-      <div className="flex flex-col place-content-start  items-center w-1/2">
+      <div className="flex flex-col flex-1 place-content-start  items-start ">
         <ul>
           <li>
             <Link href="/subscriptions">Suscripciones</Link>
