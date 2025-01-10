@@ -80,10 +80,12 @@ function SlideMain({ isOpen, setIsOpen }) {
           Settings
         </Link>
       </div>
-      <div className="bg-background p-4 mt-60">
-        <button className="bg-amber-600 text-gray-950 w-full p-2 rounded-md mb-4">
-          Why buy a subscription?
-        </button>
+      <div className="bg-background p-4 mt-40">
+        <Link href="/why" onClick={handleClose}>
+          <button className="bg-amber-600 hover:bg-amber-500 text-gray-950 w-full p-2 rounded-md mb-4 font-semibold ">
+            Why buy a subscription?
+          </button>
+        </Link>
       </div>
     </div>
   );
