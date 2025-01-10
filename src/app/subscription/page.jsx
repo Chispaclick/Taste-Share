@@ -2,7 +2,7 @@ import React from "react";
 
 function Suscription() {
   return (
-    <div className="flex bg-background place-content-center items-center p-8 w-full">
+    <div className="flex flex-col bg-background place-content-center items-center p-8 w-full">
     <div>
       {/* Introducción de la página */}
       <div>
@@ -57,6 +57,8 @@ function Suscription() {
         </div>
       </div>
     </div>
+    <p className="text-gray-300 font-semibold mt-4">Enjoy our great services with</p>
+    <button className="bg-gray-300 text-gray-950 w-full p-2 rounded-md mt-16 mb-8">Why buy a subscription?</button>
   </div>
   );
 }

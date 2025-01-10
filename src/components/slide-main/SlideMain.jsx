@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 function SlideMain({ isOpen, setIsOpen }) {
   const handleClose = () => {
@@ -8,12 +8,12 @@ function SlideMain({ isOpen, setIsOpen }) {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.classList.add('no-scroll'); // Deshabilitar scroll
+      document.body.classList.add("no-scroll"); // Deshabilitar scroll
     } else {
-      document.body.classList.remove('no-scroll'); // Rehabilitar scroll
+      document.body.classList.remove("no-scroll"); // Rehabilitar scroll
     }
     return () => {
-      document.body.classList.remove('no-scroll'); // Limpiar la clase cuando el componente se desmonta
+      document.body.classList.remove("no-scroll"); // Limpiar la clase cuando el componente se desmonta
     };
   }, [isOpen]);
 
@@ -29,7 +29,7 @@ function SlideMain({ isOpen, setIsOpen }) {
         <img src="/user_albert.jpg" className="w-16 rounded-full" />
         <h1 className="text-gray-300 font-semibold pt-4">ALBERTO</h1>
       </div>
-      <div className="flex flex-col p-4 pb-96">
+      <div className="flex flex-col p-4 pb-86">
         <Link
           onClick={handleClose}
           className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl font-semibold mb-2"
@@ -80,8 +80,10 @@ function SlideMain({ isOpen, setIsOpen }) {
           Settings
         </Link>
       </div>
-      <div className="bg-background">
-        <h2 className="text-gray-300 text-lg p-2">Suscribite</h2>
+      <div className="bg-background p-4 mt-60">
+        <button className="bg-amber-600 text-gray-950 w-full p-2 rounded-md mb-4">
+          Why buy a subscription?
+        </button>
       </div>
     </div>
   );
