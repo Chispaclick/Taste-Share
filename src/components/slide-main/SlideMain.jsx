@@ -61,6 +61,13 @@ function SlideMain({ isOpen, setIsOpen }) {
         <Link
           onClick={handleClose}
           className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl font-semibold mb-2"
+          href="/comunity"
+        >
+          Comunity
+        </Link>
+        <Link
+          onClick={handleClose}
+          className="text-gray-300 text-lg p-1 hover:bg-gray-100 hover:text-gray-950 pl-4 rounded-xl font-semibold mb-2"
           href="/trend"
         >
           Trend

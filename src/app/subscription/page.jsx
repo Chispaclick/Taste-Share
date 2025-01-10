@@ -90,7 +90,7 @@ function Suscription() {
         </div>
       </div>
       <p className="text-gray-300 font-semibold my-8 mt-14">
-        Enjoy our great services with
+        Enjoy our great services
       </p>
     </div>
   );
