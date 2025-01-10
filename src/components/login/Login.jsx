@@ -1,24 +1,27 @@
-"use client";
-
-import AntDesignCloseOutlined from "@/components/icons/AntDesignCloseOutlined";
-import useForm from "@/app/hooks/useForm";
+'use client'
+import { useState } from "react";
+import { signInWithGoogle, signInWithEmail } from "@/firebase/config";
 
 const Login = ({ loginHidden }) => {
-  const inicial = { email: "", password: "" }; // Estado inicial
-  const validacion = (valores) => {
-    const errores = {};
-    if (!valores.email) errores.email = "El email es obligatorio.";
-    if (!valores.password) errores.password = "La contraseña es obligatoria.";
-    return errores;
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleGoogleSignIn = async () => {
+    const result = await signInWithGoogle();
+    if (result.ok) {
+      console.log("Usuario autenticado con Google:", result);
+    } else {
+      console.error("Error en la autenticación con Google:", result.errorMessage);
+    }
   };
 
-  const { valorInput, error, manejadorCambio, manejadorEnvio } = useForm(
-    inicial,
-    validacion
-  );
-
-  const submitForm = () => {
-    console.log("Formulario enviado con valores:", valorInput);
+  const handleEmailSignIn = async () => {
+    const result = await signInWithEmail(email, password);
+    if (result.ok) {
+      console.log("Usuario autenticado con correo:", result);
+    } else {
+      console.log("Error en la autenticación con correo:", result.errorMessage);
+    }
   };
 
   return (
@@ -28,31 +31,25 @@ const Login = ({ loginHidden }) => {
       }`}
     >
       <form
-        onSubmit={(e) => manejadorEnvio(e, submitForm)}
+        onSubmit={(e) => e.preventDefault()}
         className="flex flex-col place-content-center items-center bg-gray-300 w-[350px] rounded-md p-2"
       >
         <div className="relative flex bg-gray-300 place-content-center items-center w-full">
-          <button type="button" className="hover:border-b-red-600">
-            <AntDesignCloseOutlined className="absolute right-0 top-0 mt-1 mr-1 m-2" />
-          </button>
           <h1 className="text-gray-950 text-3xl font-bold mb-4 py-10">
             Welcome
           </h1>
         </div>
+        {/* Inicio de sesión con correo */}
         <label className="w-full p-2" htmlFor="email">
           Email
           <input
             id="email"
             className="w-full p-2 rounded-md"
             type="email"
-            name="email"
             placeholder="Email"
-            value={valorInput.email}
-            onChange={manejadorCambio}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
-          {error.email && (
-            <span className="text-red-500 text-sm">{error.email}</span>
-          )}
         </label>
         <label className="w-full p-2" htmlFor="password">
           Password
@@ -60,28 +57,29 @@ const Login = ({ loginHidden }) => {
             id="password"
             className="w-full p-2 rounded-md mb-4"
             type="password"
-            name="password"
             placeholder="Password"
-            value={valorInput.password}
-            onChange={manejadorCambio}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
-          {error.password && (
-            <span className="text-red-500 text-sm">{error.password}</span>
-          )}
         </label>
         <button
-          type="submit"
-          className="bg-background w-full p-2 mb-2 text-gray-300 rounded-md flex place-content-center items-center"
+          type="button"
+          onClick={handleEmailSignIn}
+          className="bg-blue-500 w-full p-2 mb-2 text-gray-300 rounded-md flex place-content-center items-center"
         >
-          Login
+          Login with Email
         </button>
-        <button className="bg-red-500 w-full p-2 mb-2 text-gray-300 rounded-md flex place-content-center items-center">
+
+        {/* Inicio de sesión con Google */}
+        <button
+          type="button"
+          onClick={handleGoogleSignIn}
+          className="bg-amber-600 w-full p-2 mb-2 text-gray-950 rounded-md flex place-content-center items-center"
+        >
           Sign in with Google
         </button>
-        <button className="bg-blue-800 w-full p-2 text-gray-300 rounded-md flex place-content-center items-center">
-          Sign in with Facebook
-        </button>
-        <p className="text-sm pt-2">Don’t have an account? Sign up</p>
+        <p className="text-sm pt-2">Don’t have an account?</p>
+        <p className="text-blue-600 text-[15px] pb-4">Sign up</p>
       </form>
     </div>
   );
