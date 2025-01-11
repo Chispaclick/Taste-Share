@@ -9,7 +9,7 @@ function FormState() {
 
   const handlerFormSubmit = (e) => {
     e.preventDefault();
-    console.log('El formulario funciona:', form)
+    console.log("El formulario funciona:", form);
   };
 
   return (
@@ -18,10 +18,11 @@ function FormState() {
         className="flex flex-col animate__animated animate__fadeInUp first-letter:place-content-center items-center bg-gray-300 w-[350px] rounded-md p-4"
         onSubmit={handlerFormSubmit}
       >
-        <h1 className="text-gray-950 text-3xl font-bold mb-4">Welcome</h1>
-
-        <fieldset className="border-gray-950 border-[1px] rounded-md  pt-4 p-2
-        mb-6">
+        <img src="/logo_taste_share.png" className="w-24 brightness-50 m-4" />
+        <fieldset
+          className="border-gray-950 border-[1px] rounded-md  pt-4 p-2
+        mb-6"
+        >
           <legend className="ml-4 px-2">Log in</legend>
           <label className="w-full" htmlFor="name"></label>
           Name

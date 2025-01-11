@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { useEffect } from "react";
-import HugeiconsMoneyBag02 from '@/components/icons/HugeiconsMoneyBag02';
-import SolarUserCircleLinear from '@/components/icons/SolarUserCircleLinear';
-import IconamoonTrendUpLight from '@/components/icons/IconamoonTrendUpLight';
-import FluentHome16Regular from '@/components/icons/FluentHome16Regular';
-import FluentPeopleCommunity32Regular from '@/components/icons/FluentPeopleCommunity32Regular';
-import LsiconSettingOutline from '@/components/icons/LsiconSettingOutline';
-import FamiconsNotificationsOutline from '@/components/icons/FamiconsNotificationsOutline';
-import IconParkRanking from '@/components/icons/IconParkRanking';
-import LaUserFriends from '@/components/icons/LaUserFriends';
+import HugeiconsMoneyBag02 from "@/components/icons/HugeiconsMoneyBag02";
+import SolarUserCircleLinear from "@/components/icons/SolarUserCircleLinear";
+import IconamoonTrendUpLight from "@/components/icons/IconamoonTrendUpLight";
+import FluentHome16Regular from "@/components/icons/FluentHome16Regular";
+import FluentPeopleCommunity32Regular from "@/components/icons/FluentPeopleCommunity32Regular";
+import LsiconSettingOutline from "@/components/icons/LsiconSettingOutline";
+import FamiconsNotificationsOutline from "@/components/icons/FamiconsNotificationsOutline";
+import IconParkRanking from "@/components/icons/IconParkRanking";
+import LaUserFriends from "@/components/icons/LaUserFriends";
 
 function SlideMain({ isOpen, setIsOpen }) {
   const handleClose = () => {
@@ -44,15 +44,23 @@ function SlideMain({ isOpen, setIsOpen }) {
           className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
           href="/"
         >
-          <FluentHome16Regular className="pr-2"/>
+          <FluentHome16Regular className="pr-2" />
           Home
+        </Link>
+        <Link
+          onClick={handleClose}
+          className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
+          href="/wellcome"
+        >
+          <FluentHome16Regular className="pr-2" />
+          Wellcome
         </Link>
         <Link
           onClick={handleClose}
           className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
           href="/profile"
         >
-          <SolarUserCircleLinear className="pr-2"/>
+          <SolarUserCircleLinear className="pr-2" />
           Profile
         </Link>
         <Link
@@ -60,7 +68,7 @@ function SlideMain({ isOpen, setIsOpen }) {
           className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
           href="/ranking"
         >
-          <IconParkRanking className="pr-2"/>
+          <IconParkRanking className="pr-2" />
           Ranking
         </Link>
         <Link
@@ -68,7 +76,7 @@ function SlideMain({ isOpen, setIsOpen }) {
           className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
           href="/friends"
         >
-          <LaUserFriends className="pr-2"/>
+          <LaUserFriends className="pr-2" />
           Friends
         </Link>
         <Link
@@ -76,7 +84,7 @@ function SlideMain({ isOpen, setIsOpen }) {
           className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
           href="/comunity"
         >
-          <FluentPeopleCommunity32Regular className="pr-2"/>
+          <FluentPeopleCommunity32Regular className="pr-2" />
           Community
         </Link>
         <Link
@@ -84,7 +92,7 @@ function SlideMain({ isOpen, setIsOpen }) {
           className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
           href="/trend"
         >
-          <IconamoonTrendUpLight className="pr-2"/>
+          <IconamoonTrendUpLight className="pr-2" />
           Trend
         </Link>
         <Link
@@ -92,15 +100,23 @@ function SlideMain({ isOpen, setIsOpen }) {
           className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
           href="/subscription"
         >
-          <HugeiconsMoneyBag02 className="pr-2"/>
+          <HugeiconsMoneyBag02 className="pr-2" />
           Subscription
+        </Link>
+        <Link
+          onClick={handleClose}
+          className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
+          href="/donation"
+        >
+          <HugeiconsMoneyBag02 className="pr-2" />
+          Donations
         </Link>
         <Link
           onClick={handleClose}
           className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
           href="/settings"
         >
-          <LsiconSettingOutline className="pr-2"/>
+          <LsiconSettingOutline className="pr-2" />
           Settings
         </Link>
         <Link
@@ -108,10 +124,9 @@ function SlideMain({ isOpen, setIsOpen }) {
           className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
           href="/notifications"
         >
-          <FamiconsNotificationsOutline className="pr-2"/>
+          <FamiconsNotificationsOutline className="pr-2" />
           Notifications
         </Link>
-        
       </div>
       <div className="bg-background p-4 mt-30 relative mb-20">
         <Link href="/why" onClick={handleClose}>

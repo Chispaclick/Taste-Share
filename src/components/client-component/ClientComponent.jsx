@@ -25,8 +25,8 @@ export default function ClientComponent({ children }) {
   return (
     <>
       <Provider store={store}>
-        <FormState />
-        {/* Barra de navegación */}
+        
+        {/* Barra de navegación <FormState /> */}
         <NavBar toggleMenu={toggleMenu} showLogin={showLogin} />
         <Login loginHidden={loginHidden} />
         {/* Menú desplegable<Login /> */}
