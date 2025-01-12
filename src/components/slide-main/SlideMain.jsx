@@ -47,14 +47,14 @@ function SlideMain({ isOpen, setIsOpen }) {
           <FluentHome16Regular className="pr-2" />
           Home
         </Link>
-        <Link
+        {/*<Link
           onClick={handleClose}
           className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
           href="/wellcome"
         >
           <FluentHome16Regular className="pr-2" />
           Wellcome
-        </Link>
+        </Link>*/}
         <Link
           onClick={handleClose}
           className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"

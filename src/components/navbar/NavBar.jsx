@@ -11,12 +11,9 @@ function NavBar({ toggleMenu, showLogin }) {
       <Link href="/taste-share">
         <img src="/logo_taste_share.png" className="w-12 ml-5" />
       </Link>
-      <Link 
-      className="flex items-center"
-      href="/log">
-        <h3 className="text-gray-300 pr-1">USER</h3>
-        <img src="user_logo.png" className="w-8 mr-1" />
-      </Link>
+
+      <h3 className="text-gray-300 pr-1">USER</h3>
+      <img src="user_logo.png" className="w-8 mr-1" />
     </div>
   );
 }
