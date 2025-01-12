@@ -1,7 +1,10 @@
+'use client'
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import ErrorMessage from "@/components/error-message/ErrorMessage"; // Importa el componente personalizado
+import { loginWithEmail, signUpWithEmail, loginWithGoogle } from "@/firebase/auth";
+
 
 function HookForm() {
   const [formOpen, setFormOpen] = useState(true);
@@ -11,34 +14,69 @@ function HookForm() {
     register,
     formState: { errors },
   } = useForm();
-
+  
   const router = useRouter();
+  
+  const handleLogin = async (data) => {
+    const { email, password } = data;
 
-  const handlerFormSubmit = (data) => {
-    console.log(data);
-
-    // Redirigir solo si el formulario es válido
-    if (data.username && data.email && data.password) {
-      console.log("Formulario válido. Redirigiendo...");
-      router.push("/wellcome"); // Redirige a la página /welcome si pasa la validación
-    } else {
-      alert("Por favor, completa todos los campos."); // Muestra un mensaje de error si falta información
+    try {
+      const user = await loginWithEmail(email, password);
+      console.log("Inicio de sesión exitoso:", user);
+      router.push("/wellcome");
+      setFormOpen(false);
+    } catch (error) {
+      if (error.code === "auth/user-not-found") {
+        alert("Usuario no encontrado. ¿Quieres registrarte?");
+      } else if (error.code === "auth/wrong-password") {
+        alert("Contraseña incorrecta.");
+      } else {
+        alert("Error desconocido al iniciar sesión.");
+      }
     }
-    setFormOpen(false);
   };
-  console.log(errors);
+
+  const handleSignUp = async () => {
+    const { email, password } = getValues();
+
+    try {
+      const user = await signUpWithEmail(email, password);
+      console.log("Registro exitoso:", user);
+      alert("Registro exitoso. Ahora puedes iniciar sesión.");
+    } catch (error) {
+      if (error.code === "auth/email-already-in-use") {
+        alert("El correo ya está registrado.");
+      } else {
+        alert("Error al registrar usuario.");
+      }
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    try {
+      const user = await loginWithGoogle();
+      console.log("Inicio de sesión con Google exitoso:", user);
+      router.push("/wellcome");
+      setFormOpen(false);
+    } catch (error) {
+      alert("No se pudo completar el inicio de sesión con Google.");
+    }
+  };
+
   return (
     <div
-      className={`sticky top-0 z-30 flex flex-col place-content-center items-center bg-background w-full h-screen ${
+      className={`absolute top-0 z-50 flex flex-col place-content-center items-center bg-background w-full h-screen ${
         formOpen ? "visible" : "hidden"
       }`}
     >
       <form
-        onSubmit={handleSubmit(handlerFormSubmit)}
+        onSubmit={handleSubmit(handleLogin)}
         className="flex flex-col bg-gray-300 w-[350px] rounded-md p-4 place-content-center items-center"
       >
         <fieldset className="border-gray-950 border-[1px] rounded-md pt-4 p-2 mb-6">
-          <legend className="ml-4 px-2"><img src="/logo_taste_share.png" className="w-12 brightness-50 m-4" /></legend>
+          <legend className="ml-4 px-2">
+            <img src="/logo_taste_share.png" className="w-12 brightness-50 m-4" />
+          </legend>
           <label htmlFor="username" className="w-full pl-2">
             Name
           </label>
@@ -109,6 +147,7 @@ function HookForm() {
         <button
           type="submit"
           className="bg-background w-full p-2 mb-2 text-gray-300 rounded-md flex items-center justify-center"
+          onClick={handleSignUp}
         >
           Login with Email
         </button>
@@ -116,6 +155,7 @@ function HookForm() {
         <button
           type="button"
           className="bg-amber-600 w-full p-2 mb-2 text-gray-950 rounded-md flex items-center justify-center"
+          onClick={handleGoogleLogin}
         >
           Sign in with Google
         </button>

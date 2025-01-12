@@ -1,6 +1,6 @@
 'use client'
 import { useMemo, useState } from "react";
-import { signInWithGoogle, signInWithEmail } from "@/firebase/config";
+import { signInWithGoogle, signInWithEmail } from "@/firebase/firebase";
 import { useSelector } from "react-redux";
 
 const Login = ({ loginHidden }) => {

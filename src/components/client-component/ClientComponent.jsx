@@ -5,7 +5,7 @@ import SlideMain from "@/components/slide-main/SlideMain";
 import { useState } from "react";
 import { Provider } from "react-redux";
 import { store } from '@/store/store';
-import HookForm from '@/hooks/HookForm';
+import HookForm from "../hook-form/HookForm";
 
 export default function ClientComponent({ children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,11 +22,11 @@ export default function ClientComponent({ children }) {
   return (
     <>
       <Provider store={store}>
-        <HookForm /> 
         {/* Barra de navegación  */}
         <NavBar toggleMenu={toggleMenu} showLogin={showLogin} />
         {/* Menú desplegable<Login /> */}
         <SlideMain isOpen={isOpen} />
+        <HookForm />
 
         {/* Contenido principal */}
         <main>{children}</main>
