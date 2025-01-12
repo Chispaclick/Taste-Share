@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
+import ErrorMessage from "@/components/error-message/ErrorMessage"; // Importa el componente personalizado
 
 function HookForm() {
   const [formOpen, setFormOpen] = useState(true);
@@ -36,10 +37,9 @@ function HookForm() {
         onSubmit={handleSubmit(handlerFormSubmit)}
         className="flex flex-col bg-gray-300 w-[350px] rounded-md p-4 place-content-center items-center"
       >
-        <img src="/logo_taste_share.png" className="w-24 brightness-50 m-4" />
         <fieldset className="border-gray-950 border-[1px] rounded-md pt-4 p-2 mb-6">
-          <legend className="ml-4 px-2">Log in</legend>
-          <label htmlFor="username" className="w-full">
+          <legend className="ml-4 px-2"><img src="/logo_taste_share.png" className="w-12 brightness-50 m-4" /></legend>
+          <label htmlFor="username" className="w-full pl-2">
             Name
           </label>
           <input
@@ -47,9 +47,18 @@ function HookForm() {
             className="w-full p-2 rounded-md mt-2 mb-2"
             type="text"
             placeholder="Name"
-            {...register("username", { minLength: 3, required: true })}
+            {...register("username", {
+              required: "Este campo es requerido",
+              minLength: {
+                value: 5,
+                message: "El nombre debe tener al menos 5 caracteres",
+              },
+            })}
           />
-          {errors.password ? <p className="text-red-500 text-xs ml-1 mb-2">Este campo es requerido</p> : null}
+          {errors.username ? (
+            <ErrorMessage message={errors.username?.message} />
+          ) : null}
+
           <label htmlFor="email" className="w-full p-2">
             Email
           </label>
@@ -60,7 +69,10 @@ function HookForm() {
             placeholder="Email"
             {...register("email", { required: true })}
           />
-          {errors.password ? <p className="text-red-500 text-xs ml-1 mb-2">Este campo es requerido</p> : null}
+          {errors.email ? (
+            <ErrorMessage message={errors.email?.message} />
+          ) : null}
+
           <label htmlFor="password" className="w-full p-2">
             Password
           </label>
@@ -69,9 +81,29 @@ function HookForm() {
             className="w-full p-2 rounded-md mt-2 mb-2"
             type="password"
             placeholder="Password"
-            {...register("password", { minLength: 8, required: true })}
+            {...register("password", {
+              required: "Este campo es requerido",
+              minLength: {
+                value: 8,
+                message: "La contraseña debe tener al menos 8 caracteres",
+              },
+              validate: {
+                customPassword: (password) => {
+                  if (
+                    /[a-z]/.test(password) && // Verifica al menos una minúscula
+                    /[A-Z]/.test(password) && // Verifica al menos una mayúscula
+                    /[0-9]/.test(password)    // Verifica al menos un número
+                  ) {
+                    return true;
+                  }
+                  return "Este campo debe tener al menos un número, una minúscula y una mayúscula";
+                },
+              },
+            })}
           />
-          {errors.password ? <p className="text-red-500 text-xs ml-1 mb-2">Este campo es requerido</p> : null}
+          {errors.password ? (
+            <ErrorMessage message={errors.password?.message} />
+          ) : null}
         </fieldset>
 
         <button
