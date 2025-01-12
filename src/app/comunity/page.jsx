@@ -1,11 +1,12 @@
-const { default: CopyRight } = require("@/components/copyright/CopyRight");
-const { default: Footer } = require("@/components/footer/Footer");
+import CopyRight from "@/components/copyright/CopyRight"
+import Footer from "@/components/footer/Footer"
+
 
 
 function page() {
   return (
     <>
-    <div className="flex flex-col bg-background place-content-center items-start p-8 w-full mt-8">
+    <div className="flex flex-col bg-background place-content-center items-start p-8 w-full">
       <div className="">
         <p className="text-blue-300 text-[10px] p-1 text-right">15min Ago</p>
         <img src="/user_share_03.jpg" alt="cumple-perrito" className="rounded-md" />

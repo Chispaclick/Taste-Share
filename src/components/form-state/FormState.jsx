@@ -13,6 +13,7 @@ function FormState() {
   const router = useRouter(); // Hook para manejar la navegación
 
   const handlerFormSubmit = (e) => {
+    
     e.preventDefault(); // Evita el comportamiento predeterminado del formulario
     // Valida los campos del formulario
     if (form.name && form.email && form.password) {
@@ -25,7 +26,7 @@ function FormState() {
   };
 
   return (
-    <div className={` flex flex-col place-content-center items-center bg-background w-full h-screen ${
+    <div className={`sticky top-0 z-30 flex flex-col place-content-center items-center bg-background w-full h-screen ${
       formOpen
           ? "visibility"
           : "hidden"

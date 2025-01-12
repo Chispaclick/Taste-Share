@@ -4,7 +4,7 @@ import Footer from "@/components/footer/Footer";
 export default function Home() {
   return (
     <>
-    <div className="bg-background text-gray-300 p-8 mt-10">
+    <div className="bg-background text-gray-300 p-8">
       {/* Sección de bienvenida */}
       <section className="mb-8">
         <h1 className="text-3xl font-bold mb-4">

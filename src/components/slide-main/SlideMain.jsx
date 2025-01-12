@@ -9,6 +9,7 @@ import LsiconSettingOutline from "@/components/icons/LsiconSettingOutline";
 import FamiconsNotificationsOutline from "@/components/icons/FamiconsNotificationsOutline";
 import IconParkRanking from "@/components/icons/IconParkRanking";
 import LaUserFriends from "@/components/icons/LaUserFriends";
+import IconamoonHeartThin from "@/components/icons/IconamoonHeartThin";
 
 function SlideMain({ isOpen, setIsOpen }) {
   const handleClose = () => {
@@ -28,15 +29,14 @@ function SlideMain({ isOpen, setIsOpen }) {
 
   return (
     <div
-      className={`fixed z-10 left-0 top-10 flex flex-col bg-background text-white p-2 rounded shadow-lg transition-transform duration-500 ease-in-out w-full overflow-hidden h-screen overflow-y-hidden ${
+      className={`fixed z-10 left-0 top-16 flex flex-col bg-background text-white p-2 shadow-lg transition-transform duration-500 ease-in-out w-full overflow-hidden h-screen overflow-y-hidden ${
         isOpen
           ? "opacity-100 visible translate-x-0 "
           : "opacity-0 invisible -translate-x-full"
       }`}
     >
       <div className=" flex place-content-start items-center bg-background p-7 mt-4">
-        <img src="/user_logo.png" className="w-16 rounded-full" />
-        <h1 className="text-amber-600 font-semibold pl-2">USER NAME</h1>
+        <h1 className="text-amber-600 font-semibold text-2xl pl-2 mb-4 mt-6">USER NAME</h1>
       </div>
       <div className="flex flex-col p-4">
         <Link
@@ -90,11 +90,20 @@ function SlideMain({ isOpen, setIsOpen }) {
         <Link
           onClick={handleClose}
           className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
+          href="/favorite"
+        >
+          <IconamoonHeartThin className="pr-2" />
+          Favorites
+        </Link>
+        <Link
+          onClick={handleClose}
+          className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
           href="/trend"
         >
           <IconamoonTrendUpLight className="pr-2" />
           Trend
         </Link>
+        
         <Link
           onClick={handleClose}
           className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
@@ -130,10 +139,14 @@ function SlideMain({ isOpen, setIsOpen }) {
       </div>
       <div className="bg-background p-4 mt-30 relative mb-20">
         <Link href="/why" onClick={handleClose}>
-          <button className="bg-amber-600 hover:bg-amber-500 text-gray-950 w-full p-2 rounded-md mb-4 font-semibold">
+          <button className="bg-amber-600 hover:bg-amber-500 text-gray-950 w-full p-2 rounded-md mb-4 mt-6 font-semibold">
             Why buy a subscription?
           </button>
         </Link>
+        <p className="text-gray-300 text-[12px] mt-4 px-4">
+              Elige el plan que mejor se adapte a tus necesidades y comienza a
+              disfrutar de los beneficios exclusivos .
+            </p>
       </div>
     </div>
   );
