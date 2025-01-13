@@ -16,18 +16,18 @@ import React, { useState } from "react";
   };
 
   return (
-    <div className="flex flex-col w-full p-4 items-center">
+    <div className="flex flex-col  w-full p-4 items-center place-content-center h-20">
       <img
         src={profileImage}
         alt="Profile"
-        className="w-16 rounded-full"
+        className="w-8 rounded-full"
       />
       <h1 className="text-gray-300 text-lg font-bold my-4">Alberto</h1>
       <label
         htmlFor="profileImageInput"
         className="cursor-pointer text-blue-500 underline"
       >
-        Cambiar foto de perfil
+        .
       </label>
       <input
         id="profileImageInput"

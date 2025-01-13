@@ -1,9 +1,89 @@
 'use client'
-import { useState } from "react";
-import { uploadImage } from "@/firebase/firebase";
+import { starNewNote } from "@/slice/thunks";
+import { useDispatch } from "react-redux";
 
-const FormUp = () => {
-  const [title, setTitle] = useState("");
+const FormUp = ({upContent}) => {
+
+
+  //Aqui estamos creando la funcion para comenzar a subir 
+
+  const dispatch = useDispatch ();
+
+  const onClickNewNote = () => {
+   dispatch(starNewNote) 
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  return (
+    <div className={`absolute top-72 flex w-full place-content-center p-8 ${
+      upContent
+      ? "opacity-100 visible translate-y-0 "
+      : "opacity-0 invisible -translate-y-full"
+      }`}>
+    <form
+      
+      className="flex flex-col items-center p-4 bg-amber-600 rounded-md w-full"
+    >
+      <label className="w-full mb-2">
+        Title:
+        <input
+          type="text"
+          className="w-full p-2 border rounded-md bg-gray-300"
+          
+   
+          required
+        />
+      </label>
+      <label className="w-full mb-2">
+        Description:
+        <textarea
+          className="w-full p-2 border rounded-md bg-gray-300"
+          
+        
+          
+        />
+      </label>
+      <label className="w-full mb-4">
+        Image:
+        <input
+          type="file"
+          accept="image/*"
+          className="w-full p-2 border rounded-md"
+          
+        />
+      </label>
+      <button
+        onClick={onClickNewNote}
+        type="submit"
+        className="bg-background text-white py-2 px-4 rounded-md w-full"
+      >
+        Subir
+      </button>
+    </form>
+    </div>
+  );
+};
+
+export default FormUp;
+
+
+
+{/*const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
 
@@ -23,50 +103,4 @@ const FormUp = () => {
     } else {
       alert(`Error: ${result.errorMessage}`);
     }
-  };
-
-  return (
-    <form
-      onSubmit={handleSubmit}
-      className=" absolute bottom-0 flex flex-col items-center p-4 bg-amber-600 rounded-t-md"
-    >
-      <label className="w-full mb-2">
-        Title:
-        <input
-          type="text"
-          className="w-full p-2 border rounded-md bg-gray-300"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          required
-        />
-      </label>
-      <label className="w-full mb-2">
-        Description:
-        <textarea
-          className="w-full p-2 border rounded-md bg-gray-300"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          required
-        />
-      </label>
-      <label className="w-full mb-4">
-        Image:
-        <input
-          type="file"
-          accept="image/*"
-          className="w-full p-2 border rounded-md"
-          onChange={handleImageChange}
-          required
-        />
-      </label>
-      <button
-        type="submit"
-        className="bg-background text-white py-2 px-4 rounded-md w-full"
-      >
-        Subir
-      </button>
-    </form>
-  );
-};
-
-export default FormUp;
+  };*/}

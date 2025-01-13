@@ -1,67 +1,30 @@
 'use client'
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
-import { useRouter } from "next/navigation";
+//import { useRouter } from "next/navigation";
 import ErrorMessage from "@/components/error-message/ErrorMessage"; // Importa el componente personalizado
-import { loginWithEmail, signUpWithEmail, loginWithGoogle } from "@/firebase/auth";
 
+import { checkingAuthentication, startGoogleSignIn } from '@/slice/thunks';
 
 function HookForm() {
+
   const [formOpen, setFormOpen] = useState(true);
 
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm();
+  const {handleSubmit, register, formState: { errors }} = useForm();
   
-  const router = useRouter();
+  const dispatch = useDispatch();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    dispatch(checkingAuthentication(data.email, data.password));
+};
+
+const onGoogleSignIn = () => {
+    dispatch(startGoogleSignIn());
+};
+
   
-  const handleLogin = async (data) => {
-    const { email, password } = data;
-
-    try {
-      const user = await loginWithEmail(email, password);
-      console.log("Inicio de sesión exitoso:", user);
-      router.push("/wellcome");
-      setFormOpen(false);
-    } catch (error) {
-      if (error.code === "auth/user-not-found") {
-        alert("Usuario no encontrado. ¿Quieres registrarte?");
-      } else if (error.code === "auth/wrong-password") {
-        alert("Contraseña incorrecta.");
-      } else {
-        alert("Error desconocido al iniciar sesión.");
-      }
-    }
-  };
-
-  const handleSignUp = async () => {
-    const { email, password } = getValues();
-
-    try {
-      const user = await signUpWithEmail(email, password);
-      console.log("Registro exitoso:", user);
-      alert("Registro exitoso. Ahora puedes iniciar sesión.");
-    } catch (error) {
-      if (error.code === "auth/email-already-in-use") {
-        alert("El correo ya está registrado.");
-      } else {
-        alert("Error al registrar usuario.");
-      }
-    }
-  };
-
-  const handleGoogleLogin = async () => {
-    try {
-      const user = await loginWithGoogle();
-      console.log("Inicio de sesión con Google exitoso:", user);
-      router.push("/wellcome");
-      setFormOpen(false);
-    } catch (error) {
-      alert("No se pudo completar el inicio de sesión con Google.");
-    }
-  };
 
   return (
     <div
@@ -70,7 +33,7 @@ function HookForm() {
       }`}
     >
       <form
-        onSubmit={handleSubmit(handleLogin)}
+        onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col bg-gray-300 w-[350px] rounded-md p-4 place-content-center items-center"
       >
         <fieldset className="border-gray-950 border-[1px] rounded-md pt-4 p-2 mb-6">
@@ -147,15 +110,16 @@ function HookForm() {
         <button
           type="submit"
           className="bg-background w-full p-2 mb-2 text-gray-300 rounded-md flex items-center justify-center"
-          onClick={handleSignUp}
+        
         >
           Login with Email
         </button>
 
         <button
+          onClick={onGoogleSignIn}
           type="button"
           className="bg-amber-600 w-full p-2 mb-2 text-gray-950 rounded-md flex items-center justify-center"
-          onClick={handleGoogleLogin}
+        
         >
           Sign in with Google
         </button>

@@ -14,6 +14,9 @@ export default {
       colors: {
         background: '#101011'
       },
+      height: {
+        'custom': 'calc(100vh - 4rem)', // Cambia "4rem" según lo que necesites
+      },
     },
   },
   plugins: [],
