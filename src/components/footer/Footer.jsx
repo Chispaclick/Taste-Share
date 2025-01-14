@@ -9,7 +9,7 @@ function Footer() {
   return (
     <div className="bg-gray-300 flex flex-col place-content-center items-center w-full p-8">
       <div className="flex flex-col place-content-start  items-start w-full pl-4">
-        <h4 className="text-gray-950 font-semibold text-2xl">Asistencia</h4>
+        <h4 className="text-amber-600 font-semibold text-2xl">Asistencia</h4>
         <ul>
           <li className="text-gray-950 text-md text-start">
             <Link href="/subscriptions">Suscripciones</Link>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function useFectch() {
 
@@ -7,8 +7,8 @@ function useFectch() {
   const [ error, setError ] = useState(null)
 
   useEffect(()=> {
-
-    const Fetching = async () => {
+    const controller = new AbortController()
+    const fetching = async () => {
       try {
         const response = await fetch(url)
         if(!response.ok) {
@@ -25,8 +25,11 @@ function useFectch() {
       }
     }
   
-    Fetching()
-
+    fetching()
+    
+    return () => {
+      controller.abort
+    }
   },[url]);
   
 

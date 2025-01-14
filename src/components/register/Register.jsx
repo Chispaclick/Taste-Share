@@ -1,18 +1,13 @@
 "use client";
-import { useMemo, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
-//import { useRouter } from "next/navigation";
-import ErrorMessage from "@/components/error-message/ErrorMessage"; // Importa el componente personalizado+
-import Link from "next/link";
+import ErrorMessage from "@/components/error-message/ErrorMessage"; //
 import Image from "next/image";
+import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { startCreatingUserWithEmailPassword } from "@/slice/thunks";
+import { useMemo } from "react";
 
-import { checkingAuthentication, startGoogleSignIn } from "@/slice/thunks";
-import { startLoginWithEmailPassword } from "@/slice/thunks";
-
-function HookForm() {
-  const [formOpen, setFormOpen] = useState(true);
-
+function Register() {
   const {
     handleSubmit,
     register,
@@ -21,38 +16,29 @@ function HookForm() {
 
   const dispatch = useDispatch();
 
-  //Login
-  const onSubmit = (data) => {
-    console.log(data);
-    dispatch(checkingAuthentication(data.email, data.password));
-    onEmailSignIn(data);
-  };
-
-  //Email
-
-  const onEmailSignIn = (data) => {
-    const { email, password } = data; // Extrae email y password
-    dispatch(startLoginWithEmailPassword({ email, password }));
-  };
-
-  //Goolgle
-  const onGoogleSignIn = () => {
-    dispatch(startGoogleSignIn());
-  };
-
   const { status, ErrorMessage } = useSelector((state) => state.auth);
 
-  const isCheckingAuth = useMemo(() => status === "checking", [status]);
+  const isCheckingAuthentication = useMemo(
+    () => status === "checking",
+    [status]
+  );
+
+  const onSubmit = (data) => {
+    dispatch(
+      startCreatingUserWithEmailPassword(
+        data.email,
+        data.displayName,
+        data.password
+      )
+    );
+    console.log(data);
+  };
 
   return (
-    <div
-      className={` top-0  flex flex-col place-content-center items-center bg-background w-full h-screen ${
-        formOpen ? "visible" : "hidden"
-      }`}
-    >
+    <div className="absolute top-0 z-50 flex flex-col place-content-center items-center bg-background w-full h-screen">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col bg-amber-600 w-[350px] rounded-md p-4 place-content-center items-center"
+        className="flex flex-col bg-gray-300 w-[350px] rounded-md p-4 place-content-center items-center"
       >
         <fieldset className="border-gray-950 border-[1px] rounded-md pt-4 p-2 mb-6">
           <legend className="ml-4 px-2">
@@ -64,15 +50,15 @@ function HookForm() {
               className="brightness-50 m-4"
             />
           </legend>
-          <label htmlFor="username" className="w-full pl-2">
+          <label htmlFor="fullname" className="w-full pl-2">
             Name
           </label>
           <input
-            id="username"
+            id="fullname"
             className="w-full p-2 rounded-md mt-2 mb-2"
             type="text"
             placeholder="Name"
-            {...register("username", {
+            {...register("fullname", {
               required: "Este campo es requerido",
               minLength: {
                 value: 5,
@@ -80,15 +66,15 @@ function HookForm() {
               },
             })}
           />
-          {errors.username ? (
-            <ErrorMessage message={errors.username?.message} />
+          {errors.fullname ? (
+            <ErrorMessage message={errors.fullname?.message} />
           ) : null}
 
-          <label htmlFor="email" className="w-full p-2">
+          <label htmlFor="email-register" className="w-full p-2">
             Email
           </label>
           <input
-            id="email"
+            id="email-register"
             className="w-full p-2 rounded-md mt-2 mb-2"
             type="email"
             placeholder="Email"
@@ -98,11 +84,11 @@ function HookForm() {
             <ErrorMessage message={errors.email?.message} />
           ) : null}
 
-          <label htmlFor="password" className="w-full p-2">
+          <label htmlFor="password-register" className="w-full p-2">
             Password
           </label>
           <input
-            id="password"
+            id="password-register"
             className="w-full p-2 rounded-md mt-2 mb-2"
             type="password"
             placeholder="Password"
@@ -132,26 +118,20 @@ function HookForm() {
         </fieldset>
 
         <button
+          disabled={isCheckingAuthentication}
           type="submit"
-          onClick={onEmailSignIn}
-          className="bg-background w-full p-2 mb-2 text-gray-300 rounded-md flex items-center justify-center"
+          className="bg-amber-600 w-full p-2 mb-2 rounded-md flex items-center justify-center text-gray-950 font-bold hover:bg-background hover:text-gray-300 transition-all ease-in"
         >
-          Login with Email
+          Create account
         </button>
-        <p>{ErrorMessage}</p>
-
-        <button
-          onClick={onGoogleSignIn}
-          disabled={isCheckingAuth}
-          type="button"
-          className="bg-background w-full p-2 mb-2 text-gray-300 rounded-md flex items-center justify-center"
-        >
-          Sign in with Google
-        </button>
-
-        <Link href="/register">
-          <p className="text-sm p-3 text-gra-950 hover:underline transition-all ease-in">
-            Create an accoun?
+        <div className="">
+          
+          <p>{ErrorMessage}</p>
+        </div>
+        <p className="text-sm pt-2">Do you have an account?</p>
+        <Link href="/log">
+          <p className="text-blue-600 text-[15px] pb-4 hover:underline">
+            Sign up
           </p>
         </Link>
       </form>
@@ -159,4 +139,4 @@ function HookForm() {
   );
 }
 
-export default HookForm;
+export default Register;

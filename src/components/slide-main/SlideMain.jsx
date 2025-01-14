@@ -1,3 +1,5 @@
+'use client'
+
 import Link from "next/link";
 import { useEffect } from "react";
 import HugeiconsMoneyBag02 from "@/components/icons/HugeiconsMoneyBag02";
