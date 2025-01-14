@@ -10,8 +10,13 @@ import ErrorMessages from '@/components/error-message/ErrorMessages'
 import { checkingAuthentication, startGoogleSignIn } from "@/slice/thunks";
 import { startLoginWithEmailPassword } from "@/slice/thunks";
 
-function HookForm() {
-  const [formOpen, setFormOpen] = useState(true);
+function HookForm({showLogin}) {
+
+  
+
+  const closeForm = () => {
+    showLogin(); // Alterna el estado en el componente padre
+  };
 
   const {
     handleSubmit,
@@ -46,15 +51,21 @@ function HookForm() {
 
   return (
     <div
-      className={` top-0  flex flex-col place-content-center items-center bg-background w-full h-screen ${
-        formOpen ? "visible" : "hidden"
+      className={`absolute z-10 top-0  flex flex-col place-content-center items-center bg-background w-full h-screen ${
+        showLogin ? "visible" : "hidden"
       }`}
     >
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col animate__animated  animate__fadeInUp transition-transform duration-500  bg-gray-300 w-[350px] rounded-md p-4 place-content-center items-center"
+        className="flex flex-col relative animate__animated  animate__fadeInUp transition-transform duration-500  bg-gray-300 w-[350px] rounded-md p-4 place-content-center items-center"
       >
-        <fieldset className="border-gray-950 border-[1px] rounded-md pt-4 p-2 mb-6">
+        <button 
+        onClick={closeForm}
+        className="bg-background hover:bg-red-500 rounded-tr-md rounded-bl-md absolute top-0 right-0 mb-10 px-3 py-1 text-gray-300 text-xl">
+        X 
+
+        </button>
+        <fieldset className="border-gray-950 border-[1px] rounded-md pt-4 p-2 mb-6 mt-10">
           <legend className="ml-4 px-2">
             <Image
               src="/logo_taste_share.png"
