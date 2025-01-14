@@ -6,7 +6,7 @@ import SlideMain from "@/components/slide-main/SlideMain";
 import { Provider } from "react-redux";
 import { store } from "@/store/store";
 import { metadata } from "./metada";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Carga la fuente Kanit con los pesos deseados
 const kanit = Kanit({
@@ -32,6 +32,34 @@ function RootLayout({ children }) {
   const showLogin = () => {
     setLoginHidden(!loginHidden);
   };
+
+   // Manejo de metadata usando useEffect
+   useEffect(() => {
+    // Actualiza el título del documento
+    document.title = metadata.title;
+
+    // Actualiza la descripción
+    const metaDescription = document.querySelector("meta[name='description']");
+    if (metaDescription) {
+      metaDescription.setAttribute("content", metadata.description);
+    } else {
+      const newMeta = document.createElement("meta");
+      newMeta.name = "description";
+      newMeta.content = metadata.description;
+      document.head.appendChild(newMeta);
+    }
+
+    // Actualiza el icono
+    const linkIcon = document.querySelector("link[rel='icon']");
+    if (linkIcon) {
+      linkIcon.href = metadata.icons.icon;
+    } else {
+      const newIcon = document.createElement("link");
+      newIcon.rel = "icon";
+      newIcon.href = metadata.icons.icon;
+      document.head.appendChild(newIcon);
+    }
+  }, []);
 
 
   return (

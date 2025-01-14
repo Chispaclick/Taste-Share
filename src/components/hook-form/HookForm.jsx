@@ -3,10 +3,10 @@ import { useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 //import { useRouter } from "next/navigation";
-import ErrorMessage from "@/components/error-message/ErrorMessage"; // Importa el componente personalizado+
+ // Importa el componente personalizado+
 import Link from "next/link";
 import Image from "next/image";
-
+import ErrorMessages from '@/components/error-message/ErrorMessages'
 import { checkingAuthentication, startGoogleSignIn } from "@/slice/thunks";
 import { startLoginWithEmailPassword } from "@/slice/thunks";
 
@@ -81,7 +81,7 @@ function HookForm() {
             })}
           />
           {errors.username ? (
-            <ErrorMessage message={errors.username?.message} />
+            <ErrorMessages message={errors.username?.message} />
           ) : null}
 
           <label htmlFor="email" className="w-full p-2">
@@ -95,7 +95,7 @@ function HookForm() {
             {...register("email", { required: true })}
           />
           {errors.email ? (
-            <ErrorMessage message={errors.email?.message} />
+            <ErrorMessages message={errors.email?.message} />
           ) : null}
 
           <label htmlFor="password" className="w-full p-2">
@@ -127,7 +127,7 @@ function HookForm() {
             })}
           />
           {errors.password ? (
-            <ErrorMessage message={errors.password?.message} />
+            <ErrorMessages message={errors.password?.message} />
           ) : null}
         </fieldset>
 
@@ -138,7 +138,7 @@ function HookForm() {
         >
           Login with Email
         </button>
-        <p>{ErrorMessage}</p>
+        <p></p>
 
         <button
           onClick={onGoogleSignIn}

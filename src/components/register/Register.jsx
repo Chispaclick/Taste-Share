@@ -1,6 +1,6 @@
 "use client";
 import { useForm } from "react-hook-form";
-import ErrorMessage from "@/components/error-message/ErrorMessage"; //
+import ErrorMessages from "@/components/error-message/ErrorMessages"; //
 import Image from "next/image";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
@@ -67,7 +67,7 @@ function Register() {
             })}
           />
           {errors.fullname ? (
-            <ErrorMessage message={errors.fullname?.message} />
+            <ErrorMessages message={errors.fullname?.message} />
           ) : null}
 
           <label htmlFor="email-register" className="w-full p-2">
@@ -81,7 +81,7 @@ function Register() {
             {...register("email", { required: true })}
           />
           {errors.email ? (
-            <ErrorMessage message={errors.email?.message} />
+            <ErrorMessages message={errors.email?.message} />
           ) : null}
 
           <label htmlFor="password-register" className="w-full p-2">
@@ -113,7 +113,7 @@ function Register() {
             })}
           />
           {errors.password ? (
-            <ErrorMessage message={errors.password?.message} />
+            <ErrorMessages message={errors.password?.message} />
           ) : null}
         </fieldset>
 
