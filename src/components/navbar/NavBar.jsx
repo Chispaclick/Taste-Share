@@ -5,7 +5,7 @@ import Link from "next/link";
 
 function NavBar({ toggleMenu, showLogin, changeIcon }) {
   return (
-    <div className="flex relative z-10 top-0 w-full items-center place-content-between bg-background p-3 border-b-[0.2px] border-b-gray-300 justify-between">
+    <div className="flex fixed z-50 top-0 w-full items-center place-content-between bg-background p-3 border-b-[0.2px] border-b-gray-300 justify-between">
       {changeIcon ? (
         <IonClose onClick={toggleMenu} className="ml-2 transition-transform duration-500"
         />
