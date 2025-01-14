@@ -31,10 +31,10 @@ function SlideMain({ isOpen, setIsOpen }) {
 
   return (
     <div
-      className={`fixed z-10 left-0 top-16 flex flex-col bg-background text-white p-2 shadow-lg transition-transform duration-500 ease-in-out w-full overflow-hidden h-screen overflow-y-hidden ${
+      className={`fixed z-10 left-0 top-16 flex flex-col bg-background text-white p-2 shadow-lg  ease-in-out w-full overflow-hidden h-screen overflow-y-hidden ${
         isOpen
-          ? "opacity-100 visible translate-x-0 "
-          : "opacity-0 invisible -translate-x-full"
+          ? " translate-x-0 tras transition-transform duration-500 "
+          : " -translate-x-full transition-transform duration-500"
       }`}
     >
       <div className=" flex place-content-start items-center bg-background p-7 mt-4">
@@ -139,7 +139,7 @@ function SlideMain({ isOpen, setIsOpen }) {
           Notifications
         </Link>
       </div>
-      <div className="bg-background p-4 mt-30 relative mb-20">
+      <div className="bg-background p-4 mt-30 relative mb-20 flex flex-col">
         <Link href="/why" onClick={handleClose}>
           <button className="bg-amber-600 hover:bg-amber-500 text-gray-950 w-full p-2 rounded-md mb-4 mt-6 font-semibold">
             Why buy a subscription?
