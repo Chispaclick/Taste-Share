@@ -5,7 +5,7 @@ import Footer from "@/components/footer/Footer"
 function Trend() {
   return (
     <>
-    <div className="flex flex-col bg-background place-content-center items-start p-8 w-full">
+    <div className="flex flex-col bg-background place-content-center items-start p-8 w-full mt-10">
       <div className="">
         <p className="text-blue-300 text-[10px] p-1 text-right">15min Ago</p>
         <img src="/user_share_03.jpg" alt="cumple-perrito" className="rounded-md" />

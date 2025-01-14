@@ -52,7 +52,7 @@ function HookForm() {
     >
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col bg-amber-600 w-[350px] rounded-md p-4 place-content-center items-center"
+        className="flex flex-col animate__animated  animate__fadeInUp transition-transform duration-500  bg-gray-300 w-[350px] rounded-md p-4 place-content-center items-center"
       >
         <fieldset className="border-gray-950 border-[1px] rounded-md pt-4 p-2 mb-6">
           <legend className="ml-4 px-2">
@@ -61,7 +61,7 @@ function HookForm() {
               alt="Logo"
               width={48}
               height={48}
-              className="brightness-50 m-4"
+              className="bg-amber-600"
             />
           </legend>
           <label htmlFor="username" className="w-full pl-2">
@@ -134,7 +134,7 @@ function HookForm() {
         <button
           type="submit"
           onClick={onEmailSignIn}
-          className="bg-background w-full p-2 mb-2 text-gray-300 rounded-md flex items-center justify-center"
+          className="bg-background w-full p-2 mb-2 text-gray-300 font-bold rounded-md flex items-center justify-center"
         >
           Login with Email
         </button>
@@ -144,7 +144,7 @@ function HookForm() {
           onClick={onGoogleSignIn}
           disabled={isCheckingAuth}
           type="button"
-          className="bg-background w-full p-2 mb-2 text-gray-300 rounded-md flex items-center justify-center"
+          className="bg-amber-600 w-full p-2 mb-2 text-gray-950 font-bold rounded-md flex items-center justify-center"
         >
           Sign in with Google
         </button>

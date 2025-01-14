@@ -15,7 +15,7 @@ function Profile() {
 
   return (
     <>
-      <div className="bg-background flex flex-col place-content-start items-center w-full p-8 h-custom ">
+      <div className="bg-background flex flex-col place-content-start items-center w-full p-8 h-custom mt-10">
         <div className=" flex w-full">
           <div className="flex-1 place-content-center items-start p-4 ">
             <UserData />

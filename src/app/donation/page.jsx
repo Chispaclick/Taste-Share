@@ -17,7 +17,7 @@ function page() {
           a mejorar nuestras funcionalidades, mantener un entorno seguro y
           acelerar el desarrollo de nuevas características. Si valoras nuestro
           trabajo, considera{" "}
-          <Link href="/donate" className="text-amber-600 underline">
+          <Link href="/pay" className="text-amber-600 underline">
             donar
           </Link>{" "}
           y forma parte del crecimiento de esta comunidad.

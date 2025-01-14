@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function Wellcome() {
   return (
-    <div className="flex flex-col place-content-center items-center bg-background text-gray-300 p-8 w-full h-screen">
+    <div className="flex flex-col place-content-center items-center bg-background text-gray-300 p-8 w-full h-screen mt-10">
       <div className="flex place-content-end items-center w-full pr-4">
         <h1 className="text-3xl font-bold my-4 animate__animated animate__fadeInUp mb-14 ">
           Hola,

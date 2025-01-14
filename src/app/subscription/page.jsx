@@ -6,7 +6,7 @@ import "animate.css";
 function Suscription() {
   return (
     <>
-      <div className="flex flex-col bg-background place-content-center items-center p-8 w-full ">
+      <div className="flex flex-col bg-background place-content-center items-center p-8 w-full mt-14">
         <div>
           {/* Introducción de la página */}
           <div>

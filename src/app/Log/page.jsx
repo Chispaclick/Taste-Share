@@ -1,7 +1,6 @@
 import HookForm from '@/components/hook-form/HookForm'
-import React from 'react'
 
-function page() {
+function Login() {
   return (
     <div>
       <HookForm />
@@ -9,4 +8,4 @@ function page() {
   )
 }
 
-export default page
+export default Login

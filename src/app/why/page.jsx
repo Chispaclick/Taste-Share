@@ -5,7 +5,7 @@ import React from "react";
 function page() {
   return (
     <>
-    <div className="recommendation-section bg-background text-gray-300 p-8">
+    <div className="recommendation-section bg-background text-gray-300 p-8 mt-10">
       <section>
         <h2 class="text-2xl font-semibold mb-2">
           Acceso Exclusivo a Contenido Personalizado
