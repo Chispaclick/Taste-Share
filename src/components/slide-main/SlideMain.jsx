@@ -31,7 +31,7 @@ function SlideMain({ isOpen, setIsOpen }) {
 
   return (
     <div
-      className={`fixed z-10 left-0 top-16 flex flex-col bg-background text-white p-2 shadow-lg  ease-in-out w-full overflow-hidden h-screen overflow-y-hidden ${
+      className={`fixed left-0 top-0 flex flex-col bg-background text-white p-2 shadow-lg  ease-in-out w-full overflow-hidden h-screen overflow-y-hidden ${
         isOpen
           ? " translate-x-0 tras transition-transform duration-500 "
           : " -translate-x-full transition-transform duration-500"
