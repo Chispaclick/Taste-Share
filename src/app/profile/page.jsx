@@ -1,6 +1,5 @@
 "use client";
 import UserData from "@/components/user-data/UserData";
-import FormUp from "@/components/form-up/FormUp";
 import React, { useState } from "react";
 
 
@@ -35,7 +34,6 @@ function Profile() {
             Subir Contenido
           </button>
         </div>
-        <FormUp upContent={upContent}/>
       </div>
     </>
   );
