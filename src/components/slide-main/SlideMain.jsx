@@ -37,10 +37,10 @@ function SlideMain({ isOpen, setIsOpen }) {
           : " -translate-x-full transition-transform duration-500"
       }`}
     >
-      <div className=" flex place-content-start items-center bg-background p-7 mt-4">
+      {/*<div className=" flex place-content-start items-center bg-background p-7 mt-4">
         <h1 className="text-amber-600 font-semibold text-2xl pl-2 mb-4 mt-6">USER NAME</h1>
-      </div>
-      <div className="flex flex-col p-4">
+      </div>*/}
+      <div className="flex flex-col p-4 mt-20">
         <Link
           onClick={handleClose}
           className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
@@ -125,21 +125,30 @@ function SlideMain({ isOpen, setIsOpen }) {
         <Link
           onClick={handleClose}
           className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
-          href="/settings"
-        >
-          <LsiconSettingOutline className="pr-2" />
-          Settings
-        </Link>
-        <Link
-          onClick={handleClose}
-          className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
           href="/notifications"
         >
           <FamiconsNotificationsOutline className="pr-2" />
           Notifications
         </Link>
+        <Link
+          onClick={handleClose}
+          className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
+          href="/close-section"
+        >
+          <FamiconsNotificationsOutline className="pr-2" />
+          Close section
+        </Link>
+        <Link
+          onClick={handleClose}
+          className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
+          href="/settings"
+        >
+          <LsiconSettingOutline className="pr-2" />
+          Settings
+        </Link>
+        
       </div>
-      <div className="bg-background p-4 mt-30 relative mb-20 flex flex-col">
+      {/*<div className="bg-background p-4 mt-30 relative mb-20 flex flex-col">
         <Link href="/why" onClick={handleClose}>
           <button className="bg-amber-600 hover:bg-amber-500 text-gray-950 w-full p-2 rounded-md mb-4 mt-6 font-semibold">
             Why buy a subscription?
@@ -149,7 +158,7 @@ function SlideMain({ isOpen, setIsOpen }) {
               Elige el plan que mejor se adapte a tus necesidades y comienza a
               disfrutar de los beneficios exclusivos .
             </p>
-      </div>
+      </div>*/}
     </div>
   );
 }

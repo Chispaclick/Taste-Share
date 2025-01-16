@@ -1,12 +1,13 @@
 "use client";
 import "./globals.css"; // Asegúrate de incluir tu archivo CSS global
 import { Kanit } from "next/font/google";
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import { store } from "@/store/store";
 import { metadata } from "./metada";
 import { useEffect } from "react";
 
 import ClientComponent from "@/components/client-component/ClientComponent";
+
 
 // Carga la fuente Kanit con los pesos deseados
 const kanit = Kanit({
@@ -19,6 +20,8 @@ const kanit = Kanit({
 
 // RootLayout
 function RootLayout({ children }) {
+  
+
   // Manejo de metadata usando useEffect
   useEffect(() => {
     // Actualiza el título del documento
@@ -51,9 +54,7 @@ function RootLayout({ children }) {
     <html lang="en" className={kanit.className}>
       <body>
         <Provider store={store}>
-          <ClientComponent>
-            {children}
-          </ClientComponent>
+          <ClientComponent>{children}</ClientComponent>
         </Provider>
       </body>
     </html>
