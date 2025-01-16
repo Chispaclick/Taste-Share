@@ -1,9 +1,11 @@
 'use client'
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
  function UserData() {
+  const { displayName } = useSelector((state) => state.auth);
   const [profileImage, setProfileImage] = useState("/user_albert.jpg");
-
+  console.log("DisplayName:", displayName);
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -22,7 +24,7 @@ import React, { useState } from "react";
         alt="Profile"
         className="w-8 rounded-full"
       />
-      <h1 className="text-gray-300 text-lg font-bold my-4">Alberto</h1>
+      <h1 className="text-gray-300 text-lg font-bold my-4">{ displayName }</h1>
       <label
         htmlFor="profileImageInput"
         className="cursor-pointer text-blue-500 underline"

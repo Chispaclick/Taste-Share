@@ -14,7 +14,6 @@ import LaUserFriends from "@/components/icons/LaUserFriends";
 import IconamoonHeartThin from "@/components/icons/IconamoonHeartThin";
 import MaterialSymbolsLightDoorSensorOutline from "@/components/icons/MaterialSymbolsLightDoorSensorOutline";
 import { startLogout } from "@/slice/thunks";
-
 import { useDispatch } from "react-redux";
 
 function SlideMain({ isOpen, setIsOpen }) {
@@ -160,17 +159,7 @@ function SlideMain({ isOpen, setIsOpen }) {
           Settings
         </Link>
       </div>
-      {/*<div className="bg-background p-4 mt-30 relative mb-20 flex flex-col">
-        <Link href="/why" onClick={handleClose}>
-          <button className="bg-amber-600 hover:bg-amber-500 text-gray-950 w-full p-2 rounded-md mb-4 mt-6 font-semibold">
-            Why buy a subscription?
-          </button>
-        </Link>
-        <p className="text-gray-300 text-[12px] mt-4 px-4">
-              Elige el plan que mejor se adapte a tus necesidades y comienza a
-              disfrutar de los beneficios exclusivos .
-            </p>
-      </div>*/}
+      <img className="w-24" src="/sharpy_logo.png" alt="mascota_app"/>
     </div>
   );
 }

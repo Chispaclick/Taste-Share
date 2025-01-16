@@ -17,7 +17,8 @@ function NavBar({ toggleMenu, showLogin, changeIcon }) {
       )}
 
       {/* Logo */}
-      <Link href="/taste-share">
+      <Link className="flex mr-6" href="/taste-share">
+        <img className="w-8 absolute ml-14" src="/sharpy_logo.png" alt="mascota_app"/>
         <img src="/logo_taste_share.png" alt="Logo Taste Share" className="w-12 ml-3" />
       </Link>
 
