@@ -31,7 +31,7 @@ function NavBar({ toggleMenu, showLogin, changeIcon }) {
           </p>
         ) : (
           // Mostrar botón de login si no hay usuario autenticado
-          <Link href="/log">
+          <Link className="mr-2" href="/log">
             <button className="bg-amber-600 px-3 py-1 text-gray-950 font-bold rounded-md">
               Login
             </button>

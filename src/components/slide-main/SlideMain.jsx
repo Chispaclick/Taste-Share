@@ -159,7 +159,6 @@ function SlideMain({ isOpen, setIsOpen }) {
           Settings
         </Link>
       </div>
-      <img className="w-24" src="/sharpy_logo.png" alt="mascota_app"/>
     </div>
   );
 }
