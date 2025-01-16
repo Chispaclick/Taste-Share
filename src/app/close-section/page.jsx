@@ -1,6 +1,9 @@
-import React from 'react'
 
-function page() {
+
+function offLog() {
+
+
+
   return (
     <div>
       <h1>close section</h1>
@@ -8,4 +11,4 @@ function page() {
   )
 }
 
-export default page
+export default offLog

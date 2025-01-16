@@ -2,6 +2,7 @@ import {
   singInWithGoogle,
   registerUserWithEmailPassword,
   LoginWithEmailPassword,
+  logoutFirebase,
 } from "@/firebase/providers";
 import { checkingCredencials, logout, login } from "@/slice/authLoginSlice";
 import { createUserWithEmailAndPassword } from "firebase/auth";
@@ -35,27 +36,30 @@ export const startCreatingUserWithEmailPassword = ({
     dispatch(checkingCredencials());
     const { ok, uid, photoURL, errorMessage } =
       await registerUserWithEmailPassword({ displayName, email, password });
-    
+
     if (!ok) return dispatch(logout({ errorMessage }));
-      dispatch(login({ uid, displayName, email, photoURL }));
-    
+    dispatch(login({ uid, displayName, email, photoURL }));
   };
 };
 
 //Validacion con Email
-export const startLoginWithEmailPassword = ({email,password}) => {
+export const startLoginWithEmailPassword = ({ email, password }) => {
   return async (dispatch) => {
     // Solo llamar una vez
     dispatch(checkingCredencials());
-    const result = await LoginWithEmailPassword({email,password});
+    const result = await LoginWithEmailPassword({ email, password });
     if (!result.ok) return dispatch(logout(result));
 
     dispatch(login(result));
   };
 };
 
-
-
+export const startLogout = () => {
+  return async (dispatch) => {
+    await logoutFirebase();
+    dispatch(logout())
+  };
+};
 
 {
   /*export const starNewNote = () => {

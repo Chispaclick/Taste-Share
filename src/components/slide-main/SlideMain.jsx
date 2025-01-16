@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Link from "next/link";
 import { useEffect } from "react";
@@ -13,8 +13,17 @@ import IconParkRanking from "@/components/icons/IconParkRanking";
 import LaUserFriends from "@/components/icons/LaUserFriends";
 import IconamoonHeartThin from "@/components/icons/IconamoonHeartThin";
 import MaterialSymbolsLightDoorSensorOutline from "@/components/icons/MaterialSymbolsLightDoorSensorOutline";
+import { startLogout } from "@/slice/thunks";
+
+import { useDispatch } from "react-redux";
 
 function SlideMain({ isOpen, setIsOpen }) {
+ 
+    const dispatch = useDispatch();
+    const onLogout = () => {
+      dispatch(startLogout());
+    };
+  
   const handleClose = () => {
     setIsOpen(false); // Cierra el menú al hacer clic en un enlace
   };
@@ -106,7 +115,7 @@ function SlideMain({ isOpen, setIsOpen }) {
           <IconamoonTrendUpLight className="pr-2" />
           Trend
         </Link>
-        
+
         <Link
           onClick={handleClose}
           className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
@@ -135,11 +144,14 @@ function SlideMain({ isOpen, setIsOpen }) {
           onClick={handleClose}
           className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
           href="/close-section"
-        >
+        ><button 
+        onClick={onLogout}
+        className="flex">
           <MaterialSymbolsLightDoorSensorOutline className="mr-1" />
           Close section
+          </button>
         </Link>
-        <Link
+        <Link 
           onClick={handleClose}
           className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
           href="/settings"
@@ -147,7 +159,6 @@ function SlideMain({ isOpen, setIsOpen }) {
           <LsiconSettingOutline className="pr-2" />
           Settings
         </Link>
-        
       </div>
       {/*<div className="bg-background p-4 mt-30 relative mb-20 flex flex-col">
         <Link href="/why" onClick={handleClose}>
