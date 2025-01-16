@@ -51,13 +51,13 @@ function HookForm({showLogin}) {
 
   return (
     <div
-      className={`absolute z-10 top-0  flex flex-col place-content-center items-center bg-background w-full h-screen ${
+      className={`flex flex-col place-content-center items-center bg-background w-full h-screen ${
         showLogin ? "visible" : "hidden"
       }`}
     >
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col relative animate__animated  animate__fadeInUp transition-transform duration-500  bg-gray-300 w-[350px] rounded-md p-4 place-content-center items-center"
+        className="flex flex-col animate__animated  animate__fadeInUp transition-transform duration-500  bg-gray-300 w-[350px] rounded-md p-4 place-content-center items-center"
       >
         <button 
         onClick={closeForm}

@@ -12,6 +12,7 @@ import FamiconsNotificationsOutline from "@/components/icons/FamiconsNotificatio
 import IconParkRanking from "@/components/icons/IconParkRanking";
 import LaUserFriends from "@/components/icons/LaUserFriends";
 import IconamoonHeartThin from "@/components/icons/IconamoonHeartThin";
+import MaterialSymbolsLightDoorSensorOutline from "@/components/icons/MaterialSymbolsLightDoorSensorOutline";
 
 function SlideMain({ isOpen, setIsOpen }) {
   const handleClose = () => {
@@ -135,7 +136,7 @@ function SlideMain({ isOpen, setIsOpen }) {
           className="text-gray-300 text-lg p-1 hover:bg-amber-600 hover:text-gray-950 pl-4 rounded-md  font-semibold mb-2 transition duration-300 ease-in-out flex items-center"
           href="/close-section"
         >
-          <FamiconsNotificationsOutline className="pr-2" />
+          <MaterialSymbolsLightDoorSensorOutline className="mr-1" />
           Close section
         </Link>
         <Link
