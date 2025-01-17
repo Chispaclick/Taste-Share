@@ -1,15 +1,19 @@
 "use client";
+import UpContent from "@/components/up-content/UpContent";
 import UserData from "@/components/user-data/UserData";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
 
 
 function Profile() {
 
+  const dispatch = useDispatch()
   const [ upContent, setUpContet ] = useState(false) 
 
   const HandlerUpConten = () => {
     setUpContet(!upContent)
+    dispatch(starNewNote)
   }
 
   return (
@@ -28,11 +32,7 @@ function Profile() {
           </div>
         </div>
         <div className="absolute bottom-3 p-8 w-full flex place-content-center items-center">
-          <button 
-          onClick={ HandlerUpConten }
-          className="bg-amber-600 w-full p-2 rounded-md font-bold hover:bg-gray-300 transition-all ease-in">
-            Subir Contenido
-          </button>
+          <UpContent HandlerUpConten={HandlerUpConten} />
         </div>
       </div>
     </>

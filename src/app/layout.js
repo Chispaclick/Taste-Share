@@ -7,7 +7,7 @@ import { metadata } from "./metada";
 import { useEffect } from "react";
 
 import ClientComponent from "@/components/client-component/ClientComponent";
-
+import { AuthProvider } from "@/context/AuthProvider";
 
 // Carga la fuente Kanit con los pesos deseados
 const kanit = Kanit({
@@ -20,8 +20,6 @@ const kanit = Kanit({
 
 // RootLayout
 function RootLayout({ children }) {
-  
-
   // Manejo de metadata usando useEffect
   useEffect(() => {
     // Actualiza el título del documento
@@ -54,7 +52,9 @@ function RootLayout({ children }) {
     <html lang="en" className={kanit.className}>
       <body>
         <Provider store={store}>
-          <ClientComponent>{children}</ClientComponent>
+          <AuthProvider>
+            <ClientComponent>{children}</ClientComponent>
+          </AuthProvider>
         </Provider>
       </body>
     </html>

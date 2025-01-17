@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
  function UserData() {
-  const { displayName } = useSelector((state) => state.auth);
-  const [profileImage, setProfileImage] = useState("/user_albert.jpg");
+  const { displayName, photoURL } = useSelector((state) => state.auth);
   console.log("DisplayName:", displayName);
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -20,9 +19,9 @@ import { useSelector } from "react-redux";
   return (
     <div className="flex flex-col  w-full p-4 items-center place-content-center h-20">
       <img
-        src={profileImage}
+        src={photoURL}
         alt="Profile"
-        className="w-8 rounded-full"
+        className="w-6 rounded-full"
       />
       <h1 className="text-gray-300 text-lg font-bold my-4">{ displayName }</h1>
       <label
@@ -38,6 +37,7 @@ import { useSelector } from "react-redux";
         className="hidden"
         onChange={handleImageChange}
       />
+      
     </div>
   );
 }

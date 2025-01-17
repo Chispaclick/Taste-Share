@@ -1,11 +1,13 @@
-import React from 'react'
+import ProtectedRoute from "@/components/protect-router/ProtectedRoute";
 
 function Ranking() {
   return (
-    <div>
-      <h1>Ranking Page</h1>
-    </div>
-  )
+    <ProtectedRoute>
+      <div>
+        <h1>Ranking Page</h1>
+      </div>
+    </ProtectedRoute>
+  );
 }
 
-export default Ranking
+export default Ranking;

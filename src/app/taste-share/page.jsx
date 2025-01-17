@@ -5,11 +5,11 @@ import React from "react";
 function TasteShare() {
   return (
     <>
-    <div className="bg-orange-500 text-gray-300 p-6 mt-10">
-      <h1 className="text-3xl  font-bold text-gray-950 my-4 animate__animated  animate__fadeInUp">
+    <div className="bg-gray-950 text-gray-300 p-6 mt-10">
+      <h1 className="text-3xl  font-bold text-orange-500 my-4 animate__animated  animate__fadeInUp">
         About Taste Share
       </h1>
-      <p className=" animate__animated  animate__fadeInUp text-gray-950 text-md mb-8">
+      <p className=" animate__animated  animate__fadeInUp text-orange-500 text-md mb-8">
         <strong>Taste Share</strong> es una plataforma diseñada para compartir y
         descubrir experiencias auténticas a través de contenido multimedia.
         Desde fotografías y vídeos hasta momentos personales y emocionantes,
@@ -18,10 +18,10 @@ function TasteShare() {
         los de tu círculo cercano.
       </p>
 
-      <h2 className="text-2xl text-gray-950 font-semibold mb-2 animate__animated  animate__fadeInUp">
+      <h2 className="text-2xl text-orange-500 font-semibold mb-2 animate__animated  animate__fadeInUp">
         Comparte tus Momentos Especiales
       </h2>
-      <p className="animate__animated  animate__fadeInUp text-gray-950 text-md mb-8">
+      <p className="animate__animated  animate__fadeInUp text-orange-500   text-md mb-8">
         ¿Has tenido un día especial o una experiencia inolvidable? En{" "}
         <strong>Taste Share</strong>, puedes compartir esos momentos únicos
         directamente con tus amigos. Tus publicaciones se convierten en
@@ -29,10 +29,10 @@ function TasteShare() {
         tus amigos explorar nuevas emociones y recuerdos.
       </p>
 
-      <h2 className="text-2xl text-gray-950 font-semibold mb-2 animate__animated  animate__fadeInUp">
+      <h2 className="text-2xl text-orange-500 font-semibold mb-2 animate__animated  animate__fadeInUp">
         Explora y Descubre Contenido Diverso
       </h2>
-      <p className="animate__animated  animate__fadeInUp text-gray-950 text-md mb-8">
+      <p className="animate__animated  animate__fadeInUp text-orange-500 text-md mb-8">
         Taste Share no solo es un espacio para compartir, sino también para
         descubrir. Navega por contenido sugerido basado en tus preferencias y
         aquellos momentos que te apasionan. Ya sea música, películas, recetas o
@@ -40,10 +40,10 @@ function TasteShare() {
         tus intereses.
       </p>
 
-      <h2 className="text-2xl text-gray-950 font-semibold mb-2 animate__animated  animate__fadeInUp">
+      <h2 className="text-2xl text-orange-500 font-semibold mb-2 animate__animated  animate__fadeInUp">
         Personaliza tu Espacio Único
       </h2>
-      <p className="animate__animated  animate__fadeInUp text-gray-950 text-md mb-8">
+      <p className="animate__animated  animate__fadeInUp text-orange-500 text-md mb-8">
         Tu perfil en <strong>Taste Share</strong> es una extensión de ti mismo.
         Personaliza tu espacio con imágenes, vídeos y listas de tus favoritos
         para mostrar quién eres. Descubre a otras personas que compartan tus
@@ -51,10 +51,10 @@ function TasteShare() {
         recomendaciones.
       </p>
 
-      <h2 className="text-2xl text-gray-950 font-semibold mb-2 animate__animated  animate__fadeInUp">
+      <h2 className="text-2xl text-orange-500 font-semibold mb-2 animate__animated  animate__fadeInUp">
         Conecta con Tu Círculo Social
       </h2>
-      <p className="animate__animated  animate__fadeInUp  text-gray-950 text-md  mb-4">
+      <p className="animate__animated  animate__fadeInUp  text-orange-500 text-md  mb-4">
         Con <strong>Taste Share</strong>, compartir y conectar es fácil.
         Comparte tus experiencias y encuentra amigos que valoren tus
         recomendaciones. Esta plataforma permite no solo compartir contenido,
