@@ -7,7 +7,7 @@ import NotesList from "@/components/node-list/NotesList";
 function Community() {
   return (
     <>
-      <div className="flex flex-col bg-background place-content-center items-start p-6 w-full mt-10">
+      <div className="flex-col bg-background place-content-center items-start p-6 w-full box-border mt-8">
         <NotesList />
       </div>
       <Footer />
