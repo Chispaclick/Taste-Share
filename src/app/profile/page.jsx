@@ -1,7 +1,82 @@
-"use client";
+'use client'
+
+import AddNotes from '@/components/add-notes/AddNotes'
+
+function page() {
+  return (
+    <div className='flex w-full bg-background '>
+      <AddNotes/>
+    </div>
+  )
+}
+
+export default page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/*"use client";
 import UpContent from "@/components/up-content/UpContent";
 import UserData from "@/components/user-data/UserData";
-import React, { useState } from "react";
+import { starNewNote } from "@/share/thunks";
 import { useDispatch } from "react-redux";
 
 
@@ -9,11 +84,9 @@ import { useDispatch } from "react-redux";
 function Profile() {
 
   const dispatch = useDispatch()
-  const [ upContent, setUpContet ] = useState(false) 
 
   const HandlerUpConten = () => {
-    setUpContet(!upContent)
-    dispatch(starNewNote)
+    dispatch(starNewNote())
   }
 
   return (
@@ -39,4 +112,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default Profile;*/}

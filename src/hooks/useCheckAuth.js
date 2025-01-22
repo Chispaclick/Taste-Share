@@ -4,6 +4,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
+import { startLoadingNotes } from "@/share/thunks";
 
 function useCheckAuth() {
 
@@ -19,6 +20,7 @@ function useCheckAuth() {
       else{
         const {uid, email, displayName, photoURL} = user;
         dispatch(login({uid, email, displayName, photoURL}))
+        dispatch(startLoadingNotes())
       }
   
     });
