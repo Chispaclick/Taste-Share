@@ -9,7 +9,7 @@ function NavBar({ toggleMenu, showLogin, changeIcon }) {
   const { displayName, photoURL } = useSelector((state) => state.auth);
 
   return (
-    <div className="flex fixed z-50 top-0 w-full items-center place-content-between bg-background p-3 border-b-[0.2px] border-b-gray-300 justify-between">
+    <div className="flex fixed z-50 top-0 w-full items-center place-content-between bg-zinc-900 p-3 border-b-[0.2px] border-b-gray-300 justify-between">
       {/* Menú hamburguesa o icono de cerrar */}
       {changeIcon ? (
         <IonClose
@@ -39,17 +39,12 @@ function NavBar({ toggleMenu, showLogin, changeIcon }) {
 
       {/* Usuario / Botón Login */}
       <div className="flex items-center">
-        {displayName && photoURL ? (
+        {displayName ? (
           // Mostrar el nombre y la imagen del usuario si está logueado
           <>
             <p className="text-gray-300 font-bold uppercase mr-4">
               {displayName.split(" ")[0]}
             </p>
-            <img
-              src={photoURL}
-
-              className="rounded-full w-6" // Añade estilos para que sea una imagen redonda
-            />
           </>
         ) : (
           // Mostrar botón de login si no hay usuario autenticado

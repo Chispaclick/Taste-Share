@@ -50,7 +50,7 @@ const AddNote = () => {
   };
 
   return (
-    <div className="flex-col  w-full place-content-center items-center p-6">
+    <div className="flex-col  w-full place-content-center items-center p-6 pb-64">
       <div className="flex-col w-full place-content-center items-center mt-20 p-4 border-[1px] border-gray-300 rounded-md">
         <div className="flex-col w-full place-content-center items-center">
           <label className="flex text-gray-300" htmlFor="title">
@@ -91,7 +91,7 @@ const AddNote = () => {
           className="w-full bg-amber-600 text-gray-900 p-1 rounded-md"
           onClick={handleAddNote}
         >
-          Guardar Nota
+          Publicar
         </button>
       </div>
     </div>

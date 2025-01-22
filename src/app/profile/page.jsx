@@ -1,16 +1,20 @@
-'use client'
+"use client";
 
-import AddNotes from '@/components/add-notes/AddNotes'
+import AddNotes from "@/components/add-notes/AddNotes";
+import BottonMenu from "@/components/bottom-menu/BottonMenu";
 
 function page() {
   return (
-    <div className='flex w-full bg-background '>
-      <AddNotes/>
-    </div>
-  )
+    <>
+      <div className="flex w-full bg-background pt-60">
+        <AddNotes />
+      </div>
+      <BottonMenu />
+    </>
+  );
 }
 
-export default page
+export default page;
 
 
 
@@ -37,43 +41,8 @@ export default page
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/*"use client";
+{
+  /*"use client";
 import UpContent from "@/components/up-content/UpContent";
 import UserData from "@/components/user-data/UserData";
 import { starNewNote } from "@/share/thunks";
@@ -112,4 +81,5 @@ function Profile() {
   );
 }
 
-export default Profile;*/}
+export default Profile;*/
+}

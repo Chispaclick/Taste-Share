@@ -1,15 +1,25 @@
 "use client";
 
+import BottonMenu from "@/components/bottom-menu/BottonMenu";
 import CopyRight from "@/components/copyright/CopyRight";
 import Footer from "@/components/footer/Footer";
 import NotesList from "@/components/node-list/NotesList";
+import { useState } from "react";
 
 function Community() {
+  const [changeColorIconHeart , setChangeColorIconHeart] = useState(false)
+
+  const onChangeColorIconHeart = () => {
+    setChangeColorIconHeart(!changeColorIconHeart)
+  }
+
+
   return (
     <>
-      <div className="flex-col bg-background place-content-center items-start p-6 w-full box-border mt-8">
-        <NotesList />
+      <div className="flex-col bg-zinc-900 place-content-center items-start p-6 w-full box-border mt-8">
+        <NotesList onChangeColorIconHeart={onChangeColorIconHeart} />
       </div>
+      <BottonMenu />
       <Footer />
       <CopyRight />
     </>
@@ -18,39 +28,8 @@ function Community() {
 
 export default Community;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/*'use client'
+{
+  /*'use client'
 
 import CommunityNotes from "@/components/community-notes/CommunityNotes";
 import CopyRight from "@/components/copyright/CopyRight";
